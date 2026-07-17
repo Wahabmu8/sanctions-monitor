@@ -1,0 +1,51 @@
+name: Update sanctions data
+
+on:
+  schedule:
+    - cron: "17 * * * *"     # كل ساعة (الدقيقة 17)
+  workflow_dispatch:          # زر تشغيل يدوي
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Update index.html
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODEL: ${{ vars.MODEL }}
+        run: node update.mjs
+
+      - name: Commit changes
+        run: |
+          git config user.name  "sanctions-monitor-bot"
+          git config user.email "actions@github.com"
+          if ! git diff --quiet -- index.html; then
+            git add index.html
+            git commit -m "chore: auto-update sanctions data"
+            git push
+          else
+            echo "لا تغييرات"
+          fi
+
+      - name: Notify on new designations
+        if: ${{ hashFiles('new_designations.md') != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "🚨 مُضافون جدد لقوائم العقوبات — $(date -u +%F)" \
+            --body-file new_designations.md \
+            --assignee ${{ github.repository_owner }} || echo "تعذّر الإشعار"
+          rm -f new_designations.md
