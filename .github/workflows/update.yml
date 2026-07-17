@@ -2,7 +2,7 @@ name: Update sanctions data
 
 on:
   schedule:
-    - cron: "17 * * * *"     # كل ساعة (الدقيقة 17)
+    - cron: "0 5 * * *"     # كل ساعة (الدقيقة 17)
   workflow_dispatch:          # زر تشغيل يدوي
   push:
     branches: [ main ]
