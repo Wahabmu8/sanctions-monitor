@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مرصد العقوبات والامتثال · Sanctions & Compliance Monitor</title>
+<meta name="description" content="موجز يومي للعقوبات وتحديثات FATF لمدراء مكافحة الجرائم المالية في البنوك">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#e9edf5; --surface:#ffffff; --surface2:#f6f8fc; --surface3:#eef2f9;
+  --ink:#0c1830; --muted:#586a86; --faint:#93a1b8;
+  --line:#e6ebf4; --line2:#eef2f8;
+  --navy1:#0b1c34; --navy2:#12294a; --navy3:#1c3a63;
+  --primary:#2563eb; --primary2:#3b82f6; --primary-ink:#1a4bc4; --primary-soft:#eaf1ff;
+  --ofac:#2563eb; --eu:#b7770c; --uk:#c73a6d; --un:#0d9668; --other:#6d5bd0;
+  --red:#d33a2c; --amber:#c8890a; --green:#0d9668;
+  --sh-sm:0 1px 2px rgba(12,24,48,.06);
+  --sh:0 1px 3px rgba(12,24,48,.05), 0 8px 24px -8px rgba(12,24,48,.14);
+  --sh-lg:0 2px 6px rgba(12,24,48,.06), 0 24px 48px -18px rgba(12,24,48,.28);
+  --r:16px; --r-sm:11px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  color:var(--ink); min-height:100vh;
+  background:
+    radial-gradient(1100px 460px at 82% -8%, #e4ecff 0%, rgba(228,236,255,0) 60%),
+    radial-gradient(900px 400px at 0% 0%, #eaf7f1 0%, rgba(234,247,241,0) 55%),
+    var(--bg);
+  font-family:"IBM Plex Sans Arabic","IBM Plex Sans","Segoe UI",Tahoma,Arial,sans-serif;
+  line-height:1.65; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  letter-spacing:-.005em;
+}
+html[data-lang="en"]{direction:ltr}
+a{color:var(--primary); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1140px; margin:0 auto; padding:0 20px 96px}
+
+/* ===== Top bar ===== */
+.topbar{position:sticky; top:0; z-index:40; background:rgba(11,28,52,.86); backdrop-filter:blur(14px) saturate(1.4);
+  border-bottom:1px solid rgba(255,255,255,.06); box-shadow:0 6px 24px -14px rgba(0,0,0,.5)}
+.topbar::after{content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px; background:linear-gradient(90deg,transparent,rgba(59,130,246,.6),transparent)}
+.nav{max-width:1140px; margin:0 auto; padding:11px 20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.brand{display:flex; align-items:center; gap:12px; color:#fff}
+.brand:hover{text-decoration:none}
+.logo{width:42px; height:42px; border-radius:12px; background:linear-gradient(140deg,#2563eb,#5b9bff); display:flex; align-items:center; justify-content:center; font-size:21px; box-shadow:0 6px 18px -4px rgba(37,99,235,.7), inset 0 1px 0 rgba(255,255,255,.35)}
+.brand b{font-size:1.05rem; line-height:1.15; display:block; font-weight:600; letter-spacing:-.01em}
+.brand small{font-size:.68rem; color:#93aad0; font-weight:400; letter-spacing:.02em}
+.menu{display:flex; gap:2px; flex-wrap:wrap; margin-inline-start:auto; align-items:center}
+.menu a{color:#b7c6de; padding:8px 12px; border-radius:10px; font-size:.86rem; white-space:nowrap; transition:.18s; font-weight:500}
+.menu a:hover{color:#fff; background:rgba(255,255,255,.08); text-decoration:none}
+.menu a.active{color:#fff; background:linear-gradient(135deg,#2563eb,#3b82f6); box-shadow:0 4px 14px -4px rgba(37,99,235,.8)}
+.lang-btn{background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.16); color:#fff; padding:7px 13px; border-radius:10px; cursor:pointer; font-size:.8rem; font-family:inherit; transition:.18s}
+.lang-btn:hover{background:rgba(255,255,255,.18)}
+
+/* ===== Hero ===== */
+.hero{padding:34px 0 8px}
+.hero h1{font-size:1.85rem; margin:0 0 8px; letter-spacing:-.03em; font-weight:700; line-height:1.15}
+.hero .lead{color:var(--muted); margin:0; max-width:660px; font-size:1rem}
+.updated{display:inline-flex; align-items:center; gap:8px; margin-top:16px; font-size:.82rem; color:var(--muted); background:var(--surface); border:1px solid var(--line); padding:6px 14px; border-radius:999px; box-shadow:var(--sh-sm)}
+.updated b{color:var(--ink)}
+.live-dot{width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 0 0 rgba(13,150,104,.5); animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(13,150,104,.5)}70%{box-shadow:0 0 0 8px rgba(13,150,104,0)}100%{box-shadow:0 0 0 0 rgba(13,150,104,0)}}
+
+/* ===== Executive briefing ===== */
+.brief{position:relative; overflow:hidden; color:#fff; border-radius:22px; padding:24px 26px; margin:22px 0 6px;
+  background:linear-gradient(150deg,#0b1c34 0%,#132c4e 55%,#173765 100%); box-shadow:var(--sh-lg)}
+.brief::before{content:""; position:absolute; top:-70px; inset-inline-start:-40px; width:280px; height:280px;
+  background:radial-gradient(circle, rgba(59,130,246,.35), transparent 68%); pointer-events:none}
+.brief::after{content:""; position:absolute; bottom:-90px; inset-inline-end:-30px; width:260px; height:260px;
+  background:radial-gradient(circle, rgba(13,150,104,.22), transparent 70%); pointer-events:none}
+.brief h2{margin:0 0 3px; font-size:1.12rem; display:flex; align-items:center; gap:9px; position:relative; font-weight:600}
+.brief .brief-sub{color:#9fb6d8; font-size:.82rem; margin-bottom:18px; position:relative}
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin-bottom:18px; position:relative}
+.kpi{display:flex; align-items:center; gap:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+  border-radius:14px; padding:13px 15px; transition:.2s; backdrop-filter:blur(4px)}
+.kpi:hover{background:rgba(255,255,255,.1); transform:translateY(-2px)}
+.kpi-ico{width:38px; height:38px; flex:0 0 auto; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:18px; background:rgba(255,255,255,.1)}
+.kpi .n{font-size:1.65rem; font-weight:700; line-height:1; font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.kpi .l{font-size:.73rem; color:#b3c4dd; margin-top:4px; line-height:1.3}
+.kpi.red .n{color:#ff9384} .kpi.red .kpi-ico{background:rgba(211,58,44,.22)}
+.kpi.amber .n{color:#ffcf76} .kpi.amber .kpi-ico{background:rgba(200,137,10,.24)}
+.kpi.green .n{color:#6fe3bd} .kpi.green .kpi-ico{background:rgba(13,150,104,.24)}
+.kpi.blue .n{color:#8fb8ff} .kpi.blue .kpi-ico{background:rgba(59,130,246,.24)}
+.highlights{margin:0; padding:16px 0 0; list-style:none; display:grid; gap:11px; position:relative; border-top:1px solid rgba(255,255,255,.09)}
+.highlights li{display:flex; gap:10px; font-size:.92rem; color:#e8eef8; align-items:flex-start; line-height:1.45}
+.highlights .b-tag{flex:0 0 auto; font-size:.67rem; font-weight:700; padding:3px 9px; border-radius:7px; margin-top:1px; letter-spacing:.01em}
+.b-tag.OFAC{background:rgba(37,99,235,.28); color:#a3c4ff}
+.b-tag.UN{background:rgba(13,150,104,.26); color:#6fe3bd}
+.b-tag.EU{background:rgba(183,119,12,.28); color:#ffcf76}
+.b-tag.UK{background:rgba(199,58,109,.28); color:#ff9dbe}
+.b-tag.FATF{background:rgba(211,58,44,.3); color:#ff9384}
+.b-tag.Other{background:rgba(109,91,208,.28); color:#c3b6ff}
+
+/* ===== Tabs ===== */
+.tabs{display:flex; gap:5px; margin:30px 0 0; padding:5px; background:var(--surface); border:1px solid var(--line);
+  border-radius:14px; box-shadow:var(--sh-sm); overflow-x:auto; scrollbar-width:none; position:sticky; top:64px; z-index:20}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:none; border:0; color:var(--muted); padding:10px 16px; font-size:.92rem; font-weight:600; cursor:pointer;
+  white-space:nowrap; font-family:inherit; border-radius:10px; display:flex; align-items:center; gap:8px; transition:.18s}
+.tab:hover{color:var(--ink); background:var(--surface2)}
+.tab.active{color:#fff; background:linear-gradient(135deg,#2563eb,#3b82f6); box-shadow:0 6px 16px -6px rgba(37,99,235,.7)}
+.tab .badge{background:var(--surface3); color:var(--muted); font-size:.7rem; padding:1px 8px; border-radius:999px; font-weight:700; font-variant-numeric:tabular-nums}
+.tab.active .badge{background:rgba(255,255,255,.24); color:#fff}
+.panel{display:none; padding-top:20px; animation:fade .35s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:4px 0 14px}
+.search{flex:1; min-width:190px; display:flex; align-items:center; gap:9px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:10px 14px; box-shadow:var(--sh-sm); transition:.18s}
+.search:focus-within{border-color:var(--primary2); box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.search input{flex:1; background:transparent; border:0; outline:0; color:var(--ink); font-size:.92rem; font-family:inherit}
+.search input::placeholder{color:var(--faint)}
+.email-btn{background:linear-gradient(135deg,#2563eb,#3b82f6); color:#fff; border:0; padding:11px 17px; border-radius:12px; cursor:pointer; font-size:.86rem; font-weight:600; display:inline-flex; align-items:center; gap:7px; box-shadow:0 8px 18px -8px rgba(37,99,235,.8); transition:.18s}
+.email-btn:hover{text-decoration:none; color:#fff; transform:translateY(-1px)}
+.chips{display:flex; gap:7px; flex-wrap:wrap; margin:2px 0 14px}
+.chip{background:var(--surface); border:1px solid var(--line); color:var(--muted); padding:7px 13px; border-radius:999px; cursor:pointer; font-size:.82rem; transition:.16s; box-shadow:var(--sh-sm)}
+.chip:hover{color:var(--ink); border-color:#c9d6e8}
+.chip.active{color:#fff; background:linear-gradient(135deg,#2563eb,#3b82f6); border-color:transparent; box-shadow:0 5px 14px -6px rgba(37,99,235,.7)}
+
+/* ===== Tables ===== */
+.tbl-wrap{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--sh); overflow:hidden}
+table.tbl{width:100%; border-collapse:collapse; font-size:.9rem}
+.tbl thead th{background:var(--surface2); color:var(--muted); font-weight:600; font-size:.75rem; text-transform:uppercase; text-align:start; padding:12px 16px; border-bottom:1px solid var(--line); white-space:nowrap; letter-spacing:.04em}
+.tbl tbody td{padding:14px 16px; border-bottom:1px solid var(--line2); vertical-align:top}
+.tbl tbody tr:last-child td{border-bottom:0}
+.tbl tbody tr{transition:.14s}
+.tbl tbody tr:hover{background:var(--surface2)}
+.tbl .t-title{font-weight:600; color:var(--ink); line-height:1.4}
+.tbl .t-desc{color:var(--muted); font-size:.83rem; margin-top:4px; max-width:430px; line-height:1.5}
+.tbl .t-date{color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums; font-size:.86rem}
+.tag{font-size:.7rem; font-weight:700; padding:4px 10px; border-radius:7px; white-space:nowrap; display:inline-block; letter-spacing:.01em}
+.tag.OFAC{background:#e7f0ff; color:var(--ofac)}
+.tag.EU{background:#fbf1dd; color:var(--eu)}
+.tag.UK{background:#fce7ee; color:var(--uk)}
+.tag.UN{background:#dcf5ec; color:var(--un)}
+.tag.Other{background:#ece9fb; color:var(--other)}
+.kind-pill{font-size:.74rem; color:var(--muted); border:1px solid var(--line); padding:3px 9px; border-radius:7px; white-space:nowrap; background:var(--surface2)}
+.flag{font-size:1.1rem; line-height:1}
+.src-a{color:var(--primary); font-size:.82rem; white-space:nowrap; font-weight:500}
+.status{font-size:.68rem; font-weight:700; padding:3px 9px; border-radius:7px}
+.status.added{background:#dcf5ec; color:var(--green)}
+.status.removed{background:#fce7ee; color:var(--uk)}
+.status.action{background:#fbe4e1; color:var(--red)}
+.status.mon{background:#fbf1dd; color:var(--amber)}
+.empty{color:var(--muted); text-align:center; padding:46px; font-size:.92rem}
+
+/* share buttons */
+.share-bar{display:flex; gap:9px; flex-wrap:wrap; margin:2px 0 14px}
+.btn-share{display:inline-flex; align-items:center; gap:7px; padding:10px 15px; border-radius:12px; font-size:.85rem; font-weight:600; cursor:pointer; border:0; box-shadow:var(--sh-sm); transition:.16s; text-decoration:none}
+.btn-share:hover{transform:translateY(-1px); text-decoration:none}
+.btn-mail{background:linear-gradient(135deg,#2563eb,#3b82f6); color:#fff}
+.btn-wa{background:linear-gradient(135deg,#1faf52,#25d366); color:#fff}
+.share-cell{display:flex; gap:6px; align-items:center}
+.sh{width:32px; height:32px; border-radius:9px; display:inline-flex; align-items:center; justify-content:center; font-size:15px; background:var(--surface2); border:1px solid var(--line); text-decoration:none; transition:.15s}
+.sh:hover{text-decoration:none; transform:translateY(-1px); border-color:#c9d6e8}
+.sh-wa:hover{background:#e6f9ee; border-color:#b6e8c8}
+.sh-mail:hover{background:var(--primary-soft); border-color:#c3d9ff}
+
+@media (max-width:760px){
+  .tbl thead{display:none}
+  .tbl, .tbl tbody{display:block; width:100%}
+  .tbl tr{display:block; border-bottom:1px solid var(--line); padding:14px 16px}
+  .tbl tr:last-child{border-bottom:0}
+  .tbl tbody td{display:flex; gap:12px; padding:5px 0; border:0; align-items:baseline}
+  .tbl tbody td::before{content:attr(data-label); color:var(--faint); font-weight:600; font-size:.72rem; text-transform:uppercase; letter-spacing:.03em; flex:0 0 32%; max-width:32%}
+  .tbl .t-desc{max-width:none}
+  .tbl tbody tr:hover{background:transparent}
+  .tabs{top:60px}
+}
+
+/* ===== FATF ===== */
+.section-title{display:flex; align-items:center; gap:10px; margin:24px 0 13px; font-size:1.02rem; flex-wrap:wrap; font-weight:600}
+.section-title .note-sm{margin-inline-start:auto; font-size:.78rem; color:var(--muted); font-weight:400}
+.fatf-grid{display:grid; gap:9px; grid-template-columns:repeat(auto-fill,minmax(185px,1fr))}
+.fatf-item{display:flex; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:11px 13px; box-shadow:var(--sh-sm); transition:.16s}
+.fatf-item:hover{transform:translateY(-2px); box-shadow:var(--sh)}
+.fatf-item .cname{font-size:.9rem; font-weight:500}
+.fatf-item .flag{font-size:1.25rem}
+.fatf-item.action{border-color:#f2c6c0; background:linear-gradient(180deg,#fef5f3,#fdeeeb)}
+.callout{background:linear-gradient(180deg,#fef5f3,#fdeeeb); border:1px solid #f2c6c0; color:#8a2c20; border-radius:13px; padding:13px 17px; font-size:.87rem; margin:8px 0 18px; box-shadow:var(--sh-sm)}
+
+/* ===== Tools ===== */
+.tool-grid{display:grid; gap:13px; grid-template-columns:repeat(auto-fill,minmax(255px,1fr))}
+.tool{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:18px 19px; box-shadow:var(--sh-sm); transition:.2s; display:block; color:inherit}
+.tool:hover{text-decoration:none; transform:translateY(-3px); box-shadow:var(--sh-lg); border-color:#cdd9ec}
+.tool .t-ico{width:42px; height:42px; border-radius:12px; background:linear-gradient(135deg,#eaf1ff,#dbe8ff); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:12px}
+.tool h3{margin:0 0 5px; font-size:1rem; color:var(--ink); font-weight:600}
+.tool p{margin:0; color:var(--muted); font-size:.85rem; line-height:1.55}
+.tool .go{margin-top:11px; color:var(--primary); font-size:.82rem; font-weight:600}
+
+/* ===== Prose / about ===== */
+.card-box{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:24px 26px; margin:16px 0; box-shadow:var(--sh)}
+.card-box h2{margin:0 0 10px; font-size:1.2rem; letter-spacing:-.01em}
+.card-box h3{margin:20px 0 8px; font-size:1rem; color:var(--primary)}
+.card-box p, .card-box li{color:var(--muted)}
+.glossary dt{font-weight:700; color:var(--ink); margin-top:14px}
+.glossary dd{color:var(--muted); margin:2px 0 0}
+.note{background:linear-gradient(180deg,#eef4ff,#e7efff); border:1px solid #d4e2fb; color:#274a86; border-radius:13px; padding:13px 16px; font-size:.86rem; margin:14px 0; box-shadow:var(--sh-sm)}
+
+footer{margin-top:44px; color:var(--muted); font-size:.8rem; text-align:center; border-top:1px solid var(--line); padding-top:22px}
+
+/* language visibility */
+.en{display:none}
+html[data-lang="en"] .ar{display:none}
+html[data-lang="en"] .en{display:inline}
+html[data-lang="en"] .en.block{display:block}
+html[data-lang="ar"] .ar.block{display:block}
+
+</style>
+</head>
+<body>
+<div class="topbar"><nav class="nav">
+  <a class="brand" href="index.html">
+    <span class="logo">🛰️</span>
+    <span><b>مرصد العقوبات والامتثال</b><small>Sanctions &amp; Compliance Monitor</small></span>
+  </a>
+  <div class="menu">
+    <a href="index.html" class="active"><span class="ar">الملخص</span><span class="en">Brief</span></a>
+    <button class="lang-btn" id="lang-btn" onclick="SM.toggleLang()">English</button>
+  </div>
+</nav></div>
+
+<div class="wrap">
+  <section class="hero">
+    <h1><span class="ar">الموجز اليومي للعقوبات والامتثال</span><span class="en">Daily Sanctions &amp; Compliance Brief</span></h1>
+    <p class="lead">
+      <span class="ar">موجّه لمدراء مكافحة الجرائم المالية في البنوك — أهم المستجدات والمضافون الجدد لقوائم OFAC والأمم المتحدة، وتحديثات FATF، في نظرة واحدة.</span>
+      <span class="en">Built for bank financial-crime managers — key developments, newly listed OFAC/UN entities and FATF changes, at a glance.</span>
+    </p>
+    <div class="updated"><span class="live-dot"></span>
+      <span class="ar">تحديث تلقائي · آخر تحديث:</span><span class="en">Auto-updated · last updated:</span>
+      <b id="updated-date"></b>
+    </div>
+  </section>
+
+  <section class="brief">
+    <h2>🗞️ <span class="ar">الملخص التنفيذي</span><span class="en">Executive summary</span></h2>
+    <div class="brief-sub"><span class="ar">أبرز ما يهمّك هذا الأسبوع</span><span class="en">What matters this week</span></div>
+    <div class="kpis" id="kpis"></div>
+    <ul class="highlights" id="highlights"></ul>
+  </section>
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-tab="new" onclick="setTab('new')">
+      <span class="ar">المضافون الجدد</span><span class="en">New additions</span>
+      <span class="badge" id="badge-new"></span>
+    </button>
+    <button class="tab" data-tab="sanctions" onclick="setTab('sanctions')">
+      <span class="ar">تحديثات العقوبات</span><span class="en">Sanctions</span>
+      <span class="badge" id="badge-sanctions"></span>
+    </button>
+    <button class="tab" data-tab="fatf" onclick="setTab('fatf')">
+      <span class="ar">تحديثات FATF</span><span class="en">FATF</span>
+      <span class="badge" id="badge-fatf"></span>
+    </button>
+    <button class="tab" data-tab="tools" onclick="setTab('tools')">
+      <span class="ar">أدوات بديلة</span><span class="en">Fallback tools</span>
+    </button>
+  </div>
+
+  <!-- Panel: New additions -->
+  <section class="panel active" id="panel-new">
+    <div class="note">
+      <span class="ar">🚨 أفراد وكيانات أُضيفوا حديثاً لقوائم العقوبات — بأسمائهم الأصلية والعربية والمعلومات المتاحة. اضغط زر الإرسال لمشاركة القائمة أو أي اسم عبر الإيميل أو واتساب.</span>
+      <span class="en">🚨 Individuals & entities recently added to sanctions lists — original and Arabic names with available details. Tap a send button to share the list or any name via Email or WhatsApp.</span>
+    </div>
+    <div class="share-bar">
+      <a class="btn-share btn-mail" id="desig-mail" href="#">✉️ <span data-i18n="sendAllEmail"></span></a>
+      <a class="btn-share btn-wa" id="desig-wa" target="_blank" rel="noopener" href="#">🟢 <span data-i18n="sendAllWa"></span></a>
+    </div>
+    <div class="toolbar">
+      <div class="search">🔎 <input id="dq" type="search" oninput="renderDesig()"></div>
+    </div>
+    <div class="chips" id="desig-src"></div>
+    <div class="chips" id="desig-type"></div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr id="desig-head"></tr></thead>
+        <tbody id="desig-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Panel: Sanctions -->
+  <section class="panel" id="panel-sanctions">
+    <div class="toolbar">
+      <div class="search">🔎 <input id="q" type="search" oninput="renderSanctions()"></div>
+      <a class="email-btn" id="email-btn" href="#">✉️ <span data-i18n="emailBtn"></span></a>
+    </div>
+    <div class="chips" id="time-chips"></div>
+    <div class="chips" id="src-chips"></div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr id="thead-row"></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-fatf">
+    <div class="callout" id="fatf-changes"></div>
+    <div class="section-title">
+      <span class="status action"><span class="ar">قائمة سوداء</span><span class="en">Black list</span></span>
+      <span class="ar">دول عالية الخطورة تستوجب إجراءً مضاداً</span>
+      <span class="en">High-risk jurisdictions — call for action</span>
+      <a class="note-sm" id="fatf-src-1" href="#" target="_blank" rel="noopener"></a>
+    </div>
+    <div class="fatf-grid" id="fatf-black"></div>
+    <div class="section-title" style="margin-top:26px">
+      <span class="status mon"><span class="ar">قائمة رمادية</span><span class="en">Grey list</span></span>
+      <span class="ar">دول تحت المراقبة المشددة</span>
+      <span class="en">Jurisdictions under increased monitoring</span>
+      <span class="note-sm" id="fatf-count"></span>
+    </div>
+    <div class="fatf-grid" id="fatf-grey"></div>
+  </section>
+
+  <section class="panel" id="panel-tools">
+    <div class="note">
+      <span class="ar">🛟 إذا لم يزوّدك التحديث التلقائي بما تبحث عنه، استخدم هذه المحرّكات الرسمية للبحث المباشر بالاسم أو الكيان أو الدولة.</span>
+      <span class="en">🛟 If the automated feed doesn't have what you need, use these official engines to search directly by name, entity or country.</span>
+    </div>
+    <div class="tool-grid" id="tools"></div>
+  </section>
+
+  <footer>
+    <span class="ar">مرصد العقوبات والامتثال · تحديث تلقائي · معلومات إرشادية وليست استشارة قانونية — راجع المصادر الرسمية قبل أي قرار.</span>
+    <span class="en">Sanctions &amp; Compliance Monitor · Auto-updated · Guidance only, not legal advice — verify official sources before acting.</span>
+  </footer>
+</div>
+
+<script>
+// ============================================================
+//  مرصد العقوبات والامتثال — ملف البيانات (تحديث تلقائي عبر GitHub Actions)
+//  Sanctions & Compliance Monitor — data file (auto-updated via GitHub Actions)
+//  لا تعدّل يدوياً — يُعاد توليده دورياً.
+// ============================================================
+window.SANCTIONS_META = {
+  lastUpdated: "2026-07-17T05:00:00Z",
+  ownerEmail: "c.almutlaq@gmail.com"
+};
+
+// newToList: true  => إدراج/إضافة جديدة على قائمة (يُحتسب في ملخص المضافين الجدد)
+window.SANCTIONS_ITEMS = [
+  { id:"ofac-ansari-20260710", src:"OFAC", date:"2026-07-10", newToList:true,
+    kind:{ar:"إدراج",en:"Designation"},
+    country:{code:"IR", flag:"🇮🇷", ar:"إيران", en:"Iran"},
+    title:{ar:"إدراج علي أنصاري وشركته Smart Global وشركات صرافة إيرانية",en:"Ali Ansari & Smart Global Limited plus Iranian exchange houses designated"},
+    body:{ar:"عقوبات حجب على 8 أفراد و6 كيانات في إيران والإمارات وهونغ كونغ وسانت كيتس ونيفيس لتسهيل تدفقات مالية غير مشروعة لصالح المرشد الأعلى الإيراني.",en:"Blocking sanctions on 8 individuals and 6 entities across Iran, UAE, Hong Kong and Saint Kitts & Nevis for facilitating illicit financial flows benefiting Iran's Supreme Leader."},
+    target:{ar:"8 أفراد و6 كيانات",en:"8 individuals, 6 entities"},
+    url:"https://ofac.treasury.gov/recent-actions" },
+
+  { id:"ofac-glx1-20260710", src:"OFAC", date:"2026-07-10", newToList:false,
+    kind:{ar:"ترخيص عام",en:"General License"},
+    country:{code:"IR", flag:"🇮🇷", ar:"إيران", en:"Iran"},
+    title:{ar:"إصدار GL X1 لإنهاء معاملات النفط الإيراني حتى 17 يوليو",en:"GL X1 — wind-down of Iran crude oil transactions through July 17"},
+    body:{ar:"إلغاء الترخيص العام X واستبداله بـ X1 يسمح بإنهاء معاملات النفط الخام الإيراني حتى 17 يوليو 2026، إضافة إلى GL Y لإنهاء معاملات Smart Global حتى 9 أغسطس.",en:"GL X revoked and replaced by X1 authorizing wind-down of Iranian crude oil transactions through July 17, 2026, plus GL Y for Smart Global wind-down through August 9."},
+    target:{ar:"قطاع النفط الإيراني",en:"Iran oil sector"},
+    url:"https://ofac.treasury.gov/recent-actions" },
+
+  { id:"ofac-drc-gl2-20260710", src:"OFAC", date:"2026-07-10", newToList:false,
+    kind:{ar:"ترخيص عام",en:"General License"},
+    country:{code:"CD", flag:"🇨🇩", ar:"الكونغو الديمقراطية", en:"DR Congo"},
+    title:{ar:"ترخيص DRC رقم 2 للسلع الزراعية والطبية",en:"DRC General License No. 2 for agricultural & medical trade"},
+    body:{ar:"ترخيص معاملات السلع الزراعية والأدوية والأجهزة الطبية والتجارب السريرية مع الكونغو الديمقراطية ورواندا دون تاريخ انتهاء.",en:"Authorizes agricultural commodities, medicine, medical devices and clinical trial transactions with the DRC and Rwanda, no expiration."},
+    target:{ar:"الكونغو الديمقراطية / رواندا",en:"DR Congo / Rwanda"},
+    url:"https://ofac.treasury.gov/recent-actions" },
+
+  { id:"ofac-russia-gl13-20260708", src:"OFAC", date:"2026-07-08", newToList:false,
+    kind:{ar:"تمديد ترخيص",en:"License extension"},
+    country:{code:"RU", flag:"🇷🇺", ar:"روسيا", en:"Russia"},
+    title:{ar:"تمديد ترخيص روسيا GL 13 لثلاثة أشهر",en:"Russia GL 13 extended by three months"},
+    body:{ar:"تمديد الترخيص العام 13 (ينتهي 9 أكتوبر 2026) للسماح بدفع بعض الضرائب والرسوم للبنك المركزي الروسي ووزارة المالية.",en:"GL 13 extended (expires October 9, 2026), permitting certain tax and fee payments to Russia's Central Bank and Ministry of Finance."},
+    target:{ar:"معاملات إدارية",en:"Administrative payments"},
+    url:"https://ofac.treasury.gov/recent-actions" },
+
+  { id:"un-rsf-1591-20260224", src:"UN", date:"2026-02-24", newToList:true,
+    kind:{ar:"إدراج (لجنة 1591)",en:"Designation (1591 Cttee)"},
+    country:{code:"SD", flag:"🇸🇩", ar:"السودان", en:"Sudan"},
+    title:{ar:"لجنة 1591 تضيف 4 قياديين من قوات الدعم السريع لقائمة عقوبات السودان",en:"UN 1591 Committee adds 4 Rapid Support Forces commanders to Sudan list"},
+    body:{ar:"إدراج عبد الرحيم حمدان دقلو، وقيدو حمدان أحمد، والفاتح عبدالله إدريس، وتيجاني إبراهيم موسى — قياديون في قوات الدعم السريع (RSF).",en:"Listed: Abdul Rahim Hamdan Dagalo, Gedo Hamdan Ahmed, Al-Fateh Abdullah Idris and Tijani Ibrahim Moussa — Rapid Support Forces (RSF) commanders."},
+    target:{ar:"4 أفراد (قوات الدعم السريع)",en:"4 individuals (RSF)"},
+    url:"https://press.un.org/en/2026/sc16303.doc.htm" },
+
+  { id:"bis-uae-20260710", src:"Other", date:"2026-07-10", newToList:false,
+    kind:{ar:"ضوابط تصدير",en:"Export controls"},
+    country:{code:"AE", flag:"🇦🇪", ar:"الإمارات", en:"UAE"},
+    title:{ar:"BIS: رفع الإمارات لمجموعة الدول A:5 وإزالتها من D:3 و D:4",en:"BIS moves UAE to Country Group A:5, removes from D:3/D:4"},
+    body:{ar:"قاعدة نهائية من مكتب الصناعة والأمن (BIS) توسّع المعاملة التفضيلية للإمارات، بما فيها استثناءات ترخيص وترخيص التجارة الاستراتيجية (STA).",en:"A US BIS final rule expands favorable treatment for the UAE, including added license exceptions and Strategic Trade Authorization (STA)."},
+    target:{ar:"ضوابط التصدير",en:"Export controls"},
+    url:"https://www.bis.doc.gov/" },
+
+  { id:"state-syria-sst-20260708", src:"Other", date:"2026-07-08", newToList:false,
+    kind:{ar:"رفع تصنيف",en:"De-listing process"},
+    country:{code:"SY", flag:"🇸🇾", ar:"سوريا", en:"Syria"},
+    title:{ar:"الخارجية الأمريكية تبدأ رفع تصنيف سوريا كدولة راعية للإرهاب",en:"US State Dept begins rescinding Syria's State Sponsor of Terrorism designation"},
+    body:{ar:"بدء إجراء الرفع بفترة إشعار مسبق 45 يوماً، ليصبح نافذاً في 22 أغسطس 2026.",en:"Rescission process initiated with a 45-day pre-notification period; effective August 22, 2026."},
+    target:{ar:"سوريا",en:"Syria"},
+    url:"https://www.state.gov/" },
+
+  { id:"uk-russia-chem-20260706", src:"UK", date:"2026-07-06", newToList:true,
+    kind:{ar:"تجميد أصول",en:"Asset freeze"},
+    country:{code:"RU", flag:"🇷🇺", ar:"روسيا", en:"Russia"},
+    title:{ar:"بريطانيا تدرج 7 أفراد ومعهدين روسيين لبرنامج الأسلحة الكيميائية",en:"UK designates 7 Russians and 2 institutes over chemical weapons"},
+    body:{ar:"تجميد أصول مديري وموظفي SC Signal والمعهد الحكومي للطب العسكري لصلتهم ببرنامج الأسلحة الكيميائية الروسي غير المعلن وتطوير نوفيتشوك.",en:"Asset freezes on directors/staff of SC Signal and the State Research Institute of Military Medicine, linked to Russia's undeclared chemical weapons program and Novichok."},
+    target:{ar:"7 أفراد وكيانان",en:"7 individuals, 2 entities"},
+    url:"https://www.gov.uk/government/publications/the-uk-sanctions-list" },
+
+  { id:"uk-ofsi-fine-20260713", src:"UK", date:"2026-07-13", newToList:false,
+    kind:{ar:"غرامة / إنفاذ",en:"Enforcement"},
+    country:{code:"GB", flag:"🇬🇧", ar:"المملكة المتحدة", en:"United Kingdom"},
+    title:{ar:"OFSI يغرّم شركة تقنية مليون جنيه لخرق العقوبات",en:"OFSI fines tech company £1M for a sanctions breach"},
+    body:{ar:"مكتب تنفيذ العقوبات المالية البريطاني يفرض غرامة مليون جنيه على شركة تقنية — مؤشر على تشدد الإنفاذ (اعرف عميلك والفحص المستمر).",en:"UK OFSI fined a tech company £1M for a sanctions breach — a signal of tougher enforcement (KYC & ongoing screening)."},
+    target:{ar:"إنفاذ",en:"Enforcement"},
+    url:"https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation" },
+
+  { id:"eu-russia-21-20260713", src:"EU", date:"2026-07-13", newToList:false,
+    kind:{ar:"حزمة عقوبات",en:"Sanctions package"},
+    country:{code:"RU", flag:"🇷🇺", ar:"روسيا", en:"Russia"},
+    title:{ar:"الاتحاد الأوروبي يناقش الحزمة الـ21 ضد روسيا ويستهدف ضباط استخبارات",en:"EU debates 21st Russia package; targets intelligence officers"},
+    body:{ar:"تفاوض على الحزمة الـ21 (بنود عالقة حول حظر الدخول وسقف سعر النفط)، مع إدراج ضباط استخبارات روس متهمين بحملة تجسس سيبراني.",en:"Negotiations on the 21st package (open items on entry bans and the crude price cap), plus designation of Russian intelligence officers over a cyber-espionage campaign."},
+    target:{ar:"ضباط استخبارات",en:"Intelligence officers"},
+    url:"https://www.consilium.europa.eu/en/policies/sanctions-against-russia/timeline-sanctions-against-russia/" },
+
+  { id:"eu-smuggling-20260709", src:"EU", date:"2026-07-09", newToList:false,
+    kind:{ar:"نظام عقوبات جديد",en:"New regime"},
+    country:{code:"EU", flag:"🇪🇺", ar:"الاتحاد الأوروبي", en:"European Union"},
+    title:{ar:"مقترح نظام عقوبات ضد مهربي المهاجرين والاتجار بالبشر",en:"Proposed regime targeting migrant smugglers & human traffickers"},
+    body:{ar:"المفوضية الأوروبية تقترح نظاماً أفقياً جديداً يستهدف شبكات التهريب والاتجار بالبشر والمخدرات والأسلحة، ويتطلب موافقة الدول الـ27 بالإجماع.",en:"The European Commission proposed a new horizontal regime targeting smuggling, human trafficking, drugs and firearms networks; requires unanimous approval of all 27 Member States."},
+    target:{ar:"شبكات التهريب",en:"Smuggling networks"},
+    url:"https://www.sanctionsmap.eu/" },
+
+  { id:"un-southsudan-2821-20260701", src:"UN", date:"2026-07-01", newToList:false,
+    kind:{ar:"قرار مجلس الأمن",en:"UNSC Resolution"},
+    country:{code:"SS", flag:"🇸🇸", ar:"جنوب السودان", en:"South Sudan"},
+    title:{ar:"مجلس الأمن يجدد عقوبات جنوب السودان لعام (القرار 2821)",en:"UNSC renews South Sudan sanctions for one year (Res. 2821)"},
+    body:{ar:"تجديد نظام العقوبات على جنوب السودان لمدة عام (حظر سلاح وتجميد أصول ومنع سفر).",en:"Renewed the South Sudan sanctions regime for one year (arms embargo, asset freeze, travel ban)."},
+    target:{ar:"جنوب السودان",en:"South Sudan"},
+    url:"https://press.un.org/en/2026/sc16374.doc.htm" },
+
+  { id:"un-libya-2819-20260625", src:"UN", date:"2026-06-25", newToList:false,
+    kind:{ar:"قرار مجلس الأمن",en:"UNSC Resolution"},
+    country:{code:"LY", flag:"🇱🇾", ar:"ليبيا", en:"Libya"},
+    title:{ar:"تمديد نظام عقوبات ليبيا حتى أغسطس 2027 (القرار 2819)",en:"Libya sanctions regime extended to August 2027 (Res. 2819)"},
+    body:{ar:"تمديد نظام العقوبات على ليبيا مع إنشاء استثناءات لتجميد الأصول وحظر السلاح.",en:"Extended Libya's sanctions regime and created exemptions to the asset freeze and arms embargo."},
+    target:{ar:"ليبيا",en:"Libya"},
+    url:"https://press.un.org/en/2026/sc16337.doc.htm" },
+
+  { id:"japan-jetfuel-20260707", src:"Other", date:"2026-07-07", newToList:false,
+    kind:{ar:"إنفاذ",en:"Enforcement"},
+    country:{code:"RU", flag:"🇷🇺", ar:"روسيا", en:"Russia"},
+    title:{ar:"اليابان توضّح شمول حظر وقود الطائرات لروسيا للتحويلات غير المباشرة",en:"Japan clarifies jet fuel export ban to Russia covers indirect transfers"},
+    body:{ar:"اليابان توضح أن حظر تصدير وقود الطائرات إلى روسيا يشمل التحويلات غير المباشرة والنقل من سفينة إلى سفينة.",en:"Japan clarified its jet fuel export ban to Russia covers indirect transfers and ship-to-ship transfers."},
+    target:{ar:"الطاقة",en:"Energy"},
+    url:"https://www.sanctionsexpert.com/" }
+];
+
+// ===== FATF (المجموعة السوداء والرمادية) — اجتماع 19 يونيو 2026 =====
+window.FATF_DATA = {
+  asOf: "2026-06-19",
+  blacklist: [
+    { code:"IR", flag:"🇮🇷", ar:"إيران", en:"Iran" },
+    { code:"KP", flag:"🇰🇵", ar:"كوريا الشمالية", en:"North Korea (DPRK)" },
+    { code:"MM", flag:"🇲🇲", ar:"ميانمار", en:"Myanmar" }
+  ],
+  greylist: [
+    { code:"AO", flag:"🇦🇴", ar:"أنغولا", en:"Angola", status:"on" },
+    { code:"BO", flag:"🇧🇴", ar:"بوليفيا", en:"Bolivia", status:"on" },
+    { code:"BA", flag:"🇧🇦", ar:"البوسنة والهرسك", en:"Bosnia & Herzegovina", status:"added" },
+    { code:"BG", flag:"🇧🇬", ar:"بلغاريا", en:"Bulgaria", status:"on" },
+    { code:"CM", flag:"🇨🇲", ar:"الكاميرون", en:"Cameroon", status:"on" },
+    { code:"CI", flag:"🇨🇮", ar:"ساحل العاج", en:"Côte d'Ivoire", status:"on" },
+    { code:"CD", flag:"🇨🇩", ar:"الكونغو الديمقراطية", en:"DR Congo", status:"on" },
+    { code:"HT", flag:"🇭🇹", ar:"هايتي", en:"Haiti", status:"on" },
+    { code:"IQ", flag:"🇮🇶", ar:"العراق", en:"Iraq", status:"added" },
+    { code:"KE", flag:"🇰🇪", ar:"كينيا", en:"Kenya", status:"on" },
+    { code:"KW", flag:"🇰🇼", ar:"الكويت", en:"Kuwait", status:"on" },
+    { code:"LA", flag:"🇱🇦", ar:"لاوس", en:"Laos", status:"on" },
+    { code:"LB", flag:"🇱🇧", ar:"لبنان", en:"Lebanon", status:"on" },
+    { code:"MC", flag:"🇲🇨", ar:"موناكو", en:"Monaco", status:"on" },
+    { code:"NP", flag:"🇳🇵", ar:"نيبال", en:"Nepal", status:"on" },
+    { code:"PG", flag:"🇵🇬", ar:"بابوا غينيا الجديدة", en:"Papua New Guinea", status:"on" },
+    { code:"SS", flag:"🇸🇸", ar:"جنوب السودان", en:"South Sudan", status:"on" },
+    { code:"SY", flag:"🇸🇾", ar:"سوريا", en:"Syria", status:"on" },
+    { code:"VE", flag:"🇻🇪", ar:"فنزويلا", en:"Venezuela", status:"on" },
+    { code:"VN", flag:"🇻🇳", ar:"فيتنام", en:"Vietnam", status:"on" },
+    { code:"VG", flag:"🇻🇬", ar:"جزر العذراء (بريطانية)", en:"Virgin Islands (UK)", status:"on" },
+    { code:"YE", flag:"🇾🇪", ar:"اليمن", en:"Yemen", status:"on" }
+  ],
+  changes: {
+    added:   [ { ar:"البوسنة والهرسك", en:"Bosnia & Herzegovina" }, { ar:"العراق", en:"Iraq" } ],
+    removed: [ { ar:"الجزائر", en:"Algeria" }, { ar:"ناميبيا", en:"Namibia" } ]
+  },
+  url: "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-june-2026.html"
+};
+
+// ===== المضافون الجدد لقوائم العقوبات (أفراد وكيانات) =====
+// New additions to sanctions lists (individuals & entities)
+window.DESIGNATIONS = [
+  // OFAC — 10 يوليو 2026 (إيران: مموّلو المرشد وشبكة الصرافة)
+  { id:"d-ofac-ali-ansari", date:"2026-07-10", src:"OFAC", type:"individual",
+    nameEn:"Ali Ansari", nameAr:"علي أنصاري",
+    program:{ar:"إيران — تمويل",en:"Iran — financing"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران (مقيم بدبي)",en:"Iran (Dubai-based)"},
+    role:{ar:"ميسّر مالي — المالك والمدير السابق لبنك آينده",en:"Financial facilitator — former owner/director of Ayandeh Bank"},
+    info:{ar:"جنسية إيرانية، مقيم في دبي",en:"Iranian national, based in Dubai"},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-darbani", date:"2026-07-10", src:"OFAC", type:"individual",
+    nameEn:"Mohammad Darbani", nameAr:"محمد درباني",
+    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
+    role:{ar:"رئيس شركة محمد درباني وشركاه للصرافة",en:"Chairman, Mohammad Darbani & Partners Exchange"},
+    info:{ar:"شريك مسيطر",en:"Controlling partner"},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-rostamabadi", date:"2026-07-10", src:"OFAC", type:"individual",
+    nameEn:"Shokufeh Rostam Abadi", nameAr:"شكوفه رستم آبادي",
+    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
+    role:{ar:"الرئيس التنفيذي لشركة درباني وشركاه للصرافة",en:"CEO, Darbani & Partners Exchange"},
+    info:{ar:"شريك مسيطر",en:"Controlling partner"},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-sarshari", date:"2026-07-10", src:"OFAC", type:"individual",
+    nameEn:"Zahra Sarshari", nameAr:"زهرا سرشاري",
+    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
+    role:{ar:"عضو مجلس إدارة شركة درباني وشركاه للصرافة",en:"Board member, Darbani & Partners Exchange"},
+    info:{ar:"شريك مسيطر",en:"Controlling partner"},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-ahmad-lavasani", date:"2026-07-10", src:"OFAC", type:"individual",
+    nameEn:"Ahmad Navai Lavasani", nameAr:"أحمد نوائي لواساني",
+    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
+    role:{ar:"الرئيس التنفيذي لشركة لواساني وشركاه",en:"CEO, Lavasani & Partners"},
+    info:{ar:"شريك مسيطر",en:"Controlling partner"},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-amir-lavasani", date:"2026-07-10", src:"OFAC", type:"individual",
+    nameEn:"Amir Navai Lavasani", nameAr:"أمير نوائي لواساني",
+    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
+    role:{ar:"رئيس شركة لواساني وشركاه",en:"Chairman, Lavasani & Partners"},
+    info:{ar:"شريك مسيطر",en:"Controlling partner"},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-mohsen-khandan", date:"2026-07-10", src:"OFAC", type:"individual",
+    nameEn:"Mohsen Khandan", nameAr:"محسن خندان",
+    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
+    role:{ar:"الرئيس التنفيذي لشركة محسن خندان وشركاه",en:"CEO, Mohsen Khandan & Partners"},
+    info:{ar:"شريك مسيطر",en:"Controlling partner"},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-aliasghar-khandan", date:"2026-07-10", src:"OFAC", type:"individual",
+    nameEn:"Ali Asghar Khandan", nameAr:"علي أصغر خندان",
+    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
+    role:{ar:"عضو مجلس إدارة شركة محسن خندان وشركاه",en:"Board member, Mohsen Khandan & Partners"},
+    info:{ar:"شريك مسيطر",en:"Controlling partner"},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-smartglobal", date:"2026-07-10", src:"OFAC", type:"entity",
+    nameEn:"Smart Global Limited", nameAr:"سمارت غلوبال ليمتد",
+    program:{ar:"إيران — تمويل",en:"Iran — financing"},
+    country:{code:"KN",flag:"🇰🇳",ar:"سانت كيتس ونيفيس",en:"Saint Kitts & Nevis"},
+    role:{ar:"شركة قابضة (أداة استثمار عقاري وتجاري)",en:"Holding company (real-estate/commercial investment vehicle)"},
+    info:{ar:"مرتبطة بعلي أنصاري",en:"Linked to Ali Ansari"},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-darbani-ex", date:"2026-07-10", src:"OFAC", type:"entity",
+    nameEn:"Mohammad Darbani and Partners Exchange", nameAr:"شركة محمد درباني وشركاه للصرافة",
+    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
+    role:{ar:"شركة صرافة (Shadow exchange)",en:"Currency exchange house"},
+    info:{ar:"",en:""},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-lavasani-ex", date:"2026-07-10", src:"OFAC", type:"entity",
+    nameEn:"Lavasani and Partners General Partnership", nameAr:"شركة لواساني وشركاه",
+    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
+    role:{ar:"شركة صرافة",en:"Currency exchange house"},
+    info:{ar:"",en:""},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-khandan-ex", date:"2026-07-10", src:"OFAC", type:"entity",
+    nameEn:"Mohsen Khandan and Partners General Partnership", nameAr:"شركة محسن خندان وشركاه",
+    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
+    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
+    role:{ar:"شركة صرافة",en:"Currency exchange house"},
+    info:{ar:"",en:""},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-cdm", date:"2026-07-10", src:"OFAC", type:"entity",
+    nameEn:"CDM Trading Limited", nameAr:"سي دي إم تريدينغ ليمتد",
+    program:{ar:"إيران — واجهة",en:"Iran — front company"},
+    country:{code:"HK",flag:"🇭🇰",ar:"هونغ كونغ",en:"Hong Kong"},
+    role:{ar:"شركة واجهة للمعاملات المالية",en:"Front company for financial transactions"},
+    info:{ar:"",en:""},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+  { id:"d-ofac-naba", date:"2026-07-10", src:"OFAC", type:"entity",
+    nameEn:"Naba Alzaki Raw Materials Trading LLC", nameAr:"نبأ الزكي لتجارة المواد الخام ش.ذ.م.م",
+    program:{ar:"إيران — واجهة",en:"Iran — front company"},
+    country:{code:"AE",flag:"🇦🇪",ar:"الإمارات",en:"UAE"},
+    role:{ar:"شركة واجهة تستخدمها شركات الصرافة الإيرانية",en:"Front company used by Iranian exchange houses"},
+    info:{ar:"",en:""},
+    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
+
+  // UK — 6 يوليو 2026 (روسيا: برنامج الأسلحة الكيميائية)
+  { id:"d-uk-zhirov", date:"2026-07-06", src:"UK", type:"individual",
+    nameEn:"Artur Zhirov", nameAr:"أرتور جيروف",
+    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
+    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
+    role:{ar:"مدير معهد SC Signal",en:"Director of SC Signal"},
+    info:{ar:"",en:""},
+    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
+  { id:"d-uk-antokhin", date:"2026-07-06", src:"UK", type:"individual",
+    nameEn:"Andrei Antokhin", nameAr:"أندريه أنطوخين",
+    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
+    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
+    role:{ar:"نائب رئيس معهد SC Signal",en:"Deputy Head of SC Signal"},
+    info:{ar:"",en:""},
+    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
+  { id:"d-uk-chepur", date:"2026-07-06", src:"UK", type:"individual",
+    nameEn:"Sergei Chepur", nameAr:"سيرغي تشيبور",
+    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
+    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
+    role:{ar:"رئيس معهد أبحاث الطب العسكري (GNIII VM)",en:"Head of GNIII VM"},
+    info:{ar:"",en:""},
+    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
+  { id:"d-uk-kondratyev", date:"2026-07-06", src:"UK", type:"individual",
+    nameEn:"Vladimir Kondratyev", nameAr:"فلاديمير كوندراتييف",
+    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
+    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
+    role:{ar:"مدير في معهد GosNIIOKhT",en:"Director at GosNIIOKhT"},
+    info:{ar:"",en:""},
+    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
+  { id:"d-uk-makhlay", date:"2026-07-06", src:"UK", type:"individual",
+    nameEn:"Aleksandr Makhlay", nameAr:"ألكسندر مخلاي",
+    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
+    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
+    role:{ar:"كبير العلماء في معهد SC Signal",en:"Chief Scientist, SC Signal"},
+    info:{ar:"",en:""},
+    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
+  { id:"d-uk-kravstov", date:"2026-07-06", src:"UK", type:"individual",
+    nameEn:"Ivan Kravstov", nameAr:"إيفان كرافتسوف",
+    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
+    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
+    role:{ar:"رئيس قسم الأبحاث الرابع في SC Signal",en:"Head of 4th Research Dept, SC Signal"},
+    info:{ar:"",en:""},
+    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
+  { id:"d-uk-taranchenko", date:"2026-07-06", src:"UK", type:"individual",
+    nameEn:"Viktor Taranchenko", nameAr:"فيكتور تارانتشينكو",
+    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
+    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
+    role:{ar:"رئيس مركز الأبحاث الأول في SC Signal",en:"Head of 1st Research Centre, SC Signal"},
+    info:{ar:"",en:""},
+    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
+  { id:"d-uk-scsignal", date:"2026-07-06", src:"UK", type:"entity",
+    nameEn:"SC Signal (NTs Signal)", nameAr:"إس سي سيغنال (NTs Signal)",
+    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
+    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
+    role:{ar:"معهد أبحاث علمي حكومي روسي",en:"Russian state scientific research institute"},
+    info:{ar:"",en:""},
+    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
+  { id:"d-uk-gniiivm", date:"2026-07-06", src:"UK", type:"entity",
+    nameEn:"GNIII VM (State Research Institute of Military Medicine)", nameAr:"معهد أبحاث الطب العسكري الحكومي (GNIII VM)",
+    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
+    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
+    role:{ar:"معهد حكومي روسي للطب العسكري",en:"Russian state institute of military medicine"},
+    info:{ar:"",en:""},
+    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
+
+  // UN — 24 فبراير 2026 (لجنة 1591 — السودان / قوات الدعم السريع)
+  { id:"d-un-dagalo", date:"2026-02-24", src:"UN", type:"individual",
+    nameEn:"Abdul Rahim Hamdan Dagalo", nameAr:"عبد الرحيم حمدان دقلو",
+    program:{ar:"السودان (لجنة 1591)",en:"Sudan (1591 Committee)"},
+    country:{code:"SD",flag:"🇸🇩",ar:"السودان",en:"Sudan"},
+    role:{ar:"نائب قائد قوات الدعم السريع (RSF)",en:"Deputy Leader, Rapid Support Forces (RSF)"},
+    info:{ar:"تاريخ الميلاد: 1 يناير 1972 — الخرطوم",en:"DOB: 1 Jan 1972 — Khartoum"},
+    url:"https://press.un.org/en/2026/sc16303.doc.htm" },
+  { id:"d-un-gedo", date:"2026-02-24", src:"UN", type:"individual",
+    nameEn:"Gedo Hamdan Ahmed (Abu Nashuk)", nameAr:"قيدو حمدان أحمد (أبو نشوك)",
+    program:{ar:"السودان (لجنة 1591)",en:"Sudan (1591 Committee)"},
+    country:{code:"SD",flag:"🇸🇩",ar:"السودان",en:"Sudan"},
+    role:{ar:"قائد قطاع شمال دارفور في قوات الدعم السريع",en:"Commander, North Darfur sector, RSF"},
+    info:{ar:"كنية: أبو نشوك",en:"Alias: Abu Nashuk"},
+    url:"https://press.un.org/en/2026/sc16303.doc.htm" },
+  { id:"d-un-idris", date:"2026-02-24", src:"UN", type:"individual",
+    nameEn:"Al-Fateh Abdullah Idris (Abu Lulu)", nameAr:"الفاتح عبدالله إدريس (أبو لولو)",
+    program:{ar:"السودان (لجنة 1591)",en:"Sudan (1591 Committee)"},
+    country:{code:"SD",flag:"🇸🇩",ar:"السودان",en:"Sudan"},
+    role:{ar:"عميد في قوات الدعم السريع",en:"Brigadier General, RSF"},
+    info:{ar:"كنية: أبو لولو",en:"Alias: Abu Lulu"},
+    url:"https://press.un.org/en/2026/sc16303.doc.htm" },
+  { id:"d-un-tijani", date:"2026-02-24", src:"UN", type:"individual",
+    nameEn:"Tijani Ibrahim Moussa Mohamed (Al Zeir Salem)", nameAr:"تيجاني إبراهيم موسى محمد (الزير سالم)",
+    program:{ar:"السودان (لجنة 1591)",en:"Sudan (1591 Committee)"},
+    country:{code:"SD",flag:"🇸🇩",ar:"السودان",en:"Sudan"},
+    role:{ar:"قائد ميداني في قوات الدعم السريع",en:"Field Commander, RSF"},
+    info:{ar:"كنية: الزير سالم",en:"Alias: Al Zeir Salem"},
+    url:"https://press.un.org/en/2026/sc16303.doc.htm" }
+];
+
+// المصادر الرسمية التي تُراقب
+window.SANCTIONS_SOURCES = [
+  { ar:"مكتب مراقبة الأصول الأجنبية (OFAC) — الخزانة الأمريكية", en:"OFAC — U.S. Treasury (Recent Actions & SDN)", url:"https://ofac.treasury.gov/recent-actions" },
+  { ar:"مجلس الاتحاد الأوروبي — العقوبات", en:"Council of the EU — Sanctions", url:"https://www.consilium.europa.eu/en/policies/sanctions/" },
+  { ar:"خريطة عقوبات الاتحاد الأوروبي", en:"EU Sanctions Map", url:"https://www.sanctionsmap.eu/" },
+  { ar:"مكتب تنفيذ العقوبات المالية (OFSI) — بريطانيا", en:"UK OFSI — Financial Sanctions", url:"https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation" },
+  { ar:"مجلس الأمن الدولي — العقوبات", en:"UN Security Council — Sanctions", url:"https://main.un.org/securitycouncil/en/sanctions/information" },
+  { ar:"مجموعة العمل المالي (FATF)", en:"Financial Action Task Force (FATF)", url:"https://www.fatf-gafi.org/en/countries/black-and-grey-lists.html" },
+  { ar:"مكتب الصناعة والأمن (BIS) — ضوابط التصدير", en:"U.S. BIS — Export Controls", url:"https://www.bis.doc.gov/" }
+];
+
+</script>
+<script>
+// ============ مرصد العقوبات والامتثال — المنطق المشترك / shared logic ============
+(function(){
+  const SRC_LABEL = {
+    OFAC:{ar:"أمريكا (OFAC)",en:"US (OFAC)"},
+    EU:{ar:"الاتحاد الأوروبي",en:"European Union"},
+    UK:{ar:"المملكة المتحدة",en:"United Kingdom"},
+    UN:{ar:"الأمم المتحدة",en:"United Nations"},
+    Other:{ar:"جهات أخرى",en:"Other"}
+  };
+  const T = {
+    all:{ar:"الكل",en:"All"},
+    today:{ar:"اليوم",en:"Today"},
+    d7:{ar:"آخر 7 أيام",en:"Last 7 days"},
+    d30:{ar:"آخر 30 يوم",en:"Last 30 days"},
+    search:{ar:"ابحث بالاسم أو الدولة أو الكيان…",en:"Search by name, country or entity…"},
+    emailBtn:{ar:"أرسل لي الملخص",en:"Email me the brief"},
+    empty:{ar:"لا توجد نتائج مطابقة.",en:"No matching results."},
+    results:{ar:"نتيجة",en:"results"},
+    // table headers
+    hDate:{ar:"التاريخ",en:"Date"},
+    hAuthority:{ar:"الجهة",en:"Authority"},
+    hType:{ar:"النوع",en:"Type"},
+    hUpdate:{ar:"التحديث",en:"Update"},
+    hTarget:{ar:"المستهدف",en:"Target"},
+    hCountry:{ar:"الدولة",en:"Country"},
+    hSource:{ar:"المصدر",en:"Source"},
+    open:{ar:"فتح ↗",en:"Open ↗"},
+    // designations
+    hNameEn:{ar:"الاسم الأصلي",en:"Original name"},
+    hNameAr:{ar:"الاسم بالعربي",en:"Arabic name"},
+    hKind2:{ar:"النوع",en:"Type"},
+    hProgram:{ar:"القائمة / البرنامج",en:"List / program"},
+    hInfo:{ar:"معلومات",en:"Details"},
+    hShare:{ar:"إرسال",en:"Share"},
+    individual:{ar:"فرد",en:"Individual"},
+    entity:{ar:"كيان",en:"Entity"},
+    sendEmail:{ar:"إرسال بالإيميل",en:"Send by email"},
+    sendWa:{ar:"إرسال بواتساب",en:"Send by WhatsApp"},
+    sendAllEmail:{ar:"أرسل القائمة بالإيميل",en:"Email the list"},
+    sendAllWa:{ar:"أرسل القائمة بواتساب",en:"WhatsApp the list"},
+    desigNote:{ar:"أفراد وكيانات أُضيفوا حديثاً لقوائم العقوبات — اضغط زر الإرسال لمشاركتهم فوراً.",en:"Individuals & entities recently added to sanctions lists — tap a send button to share instantly."}
+  };
+
+  // أدوات بديلة رسمية — تعمل دائماً حتى لو لم يتوفر تحديث تلقائي
+  const TOOLS = [
+    { ico:"🔎", ar:"بحث قائمة OFAC (SDN)", en:"OFAC SDN Search",
+      da:"ابحث مباشرة في قائمة المواطنين المحظورين وقوائم OFAC الأخرى بالاسم أو الكيان.",
+      de:"Search the SDN and other OFAC lists directly by name or entity.",
+      url:"https://sanctionssearch.ofac.treas.gov/" },
+    { ico:"🌐", ar:"البحث الموحّد للأمم المتحدة", en:"UN Consolidated List Search",
+      da:"محرك بحث قائمة عقوبات مجلس الأمن الموحّدة (كل اللجان).",
+      de:"Search engine for the UN Security Council consolidated sanctions list (all committees).",
+      url:"https://search.sanctions.un.org/" },
+    { ico:"🇪🇺", ar:"خريطة عقوبات الاتحاد الأوروبي", en:"EU Sanctions Map",
+      da:"استعرض العقوبات الأوروبية حسب الدولة أو النظام، مع الأسس القانونية.",
+      de:"Browse EU sanctions by country or regime, with legal bases.",
+      url:"https://www.sanctionsmap.eu/" },
+    { ico:"🇬🇧", ar:"البحث في قائمة OFSI البريطانية", en:"UK OFSI List Search",
+      da:"بحث القائمة الموحّدة للأشخاص والكيانات الخاضعين للعقوبات المالية في بريطانيا.",
+      de:"Search the UK consolidated list of financial sanctions targets.",
+      url:"https://sanctionssearchapp.ofsi.hmtreasury.gov.uk/" },
+    { ico:"⚖️", ar:"قوائم FATF (سوداء ورمادية)", en:"FATF Black & Grey Lists",
+      da:"الدول عالية الخطورة والدول تحت المراقبة المشددة — المصدر الرسمي.",
+      de:"High-risk and increased-monitoring jurisdictions — official source.",
+      url:"https://www.fatf-gafi.org/en/countries/black-and-grey-lists.html" },
+    { ico:"🗂️", ar:"OpenSanctions (بحث شامل)", en:"OpenSanctions (aggregate)",
+      da:"قاعدة بيانات مجمّعة تبحث عبر معظم قوائم العقوبات عالمياً في آنٍ واحد.",
+      de:"Aggregated database that searches across most global sanctions lists at once.",
+      url:"https://www.opensanctions.org/search/" }
+  ];
+
+  window.SM = { SRC_LABEL, T, TOOLS };
+
+  // ---------- language ----------
+  function getLang(){ let l="ar"; try{ l=localStorage.getItem("sm_lang")||"ar"; }catch(e){} return l; }
+  function applyLang(l){
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.setAttribute("lang", l);
+    document.documentElement.setAttribute("dir", l==="ar"?"rtl":"ltr");
+    try{ localStorage.setItem("sm_lang", l); }catch(e){}
+    const btn=document.getElementById("lang-btn"); if(btn) btn.textContent = l==="ar"?"English":"العربية";
+  }
+  window.SM.lang = getLang;
+  window.SM.toggleLang = function(){ applyLang(getLang()==="ar"?"en":"ar"); if(window.SM._render) window.SM._render(); };
+  applyLang(getLang());
+
+  // ---------- helpers ----------
+  window.SM.fmtDate = function(d){
+    const L=getLang(); const dt=new Date(d+(d.length===10?"T00:00:00":""));
+    return dt.toLocaleDateString(L==="ar"?"ar-EG":"en-GB",{year:"numeric",month:"short",day:"numeric"});
+  };
+  window.SM.daysAgo = function(dateStr){
+    const now=new Date(window.SANCTIONS_META.lastUpdated); const dt=new Date(dateStr+"T00:00:00");
+    return Math.floor((now-dt)/(1000*60*60*24));
+  };
+
+  // ---------- sanctions table row ----------
+  window.SM.rowHTML = function(i){
+    const L=getLang();
+    return `<tr>
+      <td data-label="${T.hDate[L]}"><span class="t-date">${window.SM.fmtDate(i.date)}</span></td>
+      <td data-label="${T.hAuthority[L]}"><span class="tag ${i.src}">${SRC_LABEL[i.src][L]}</span></td>
+      <td data-label="${T.hType[L]}"><span class="kind-pill">${i.kind[L]}</span></td>
+      <td data-label="${T.hUpdate[L]}">
+        <div class="t-title">${i.title[L]}</div>
+        <div class="t-desc">${i.body[L]}</div>
+      </td>
+      <td data-label="${T.hTarget[L]}">${i.target[L]}</td>
+      <td data-label="${T.hCountry[L]}"><span class="flag">${i.country.flag||""}</span> ${i.country[L]}</td>
+      <td data-label="${T.hSource[L]}"><a class="src-a" href="${i.url}" target="_blank" rel="noopener">${T.open[L]}</a></td>
+    </tr>`;
+  };
+
+  // ---------- email (mailto) ----------
+  window.SM.buildMailto = function(items){
+    const L=getLang(); const to=(window.SANCTIONS_META.ownerEmail)||"";
+    const subject = L==="ar" ? "موجز العقوبات والامتثال" : "Sanctions & Compliance brief";
+    const lines = items.slice(0,15).map(i=>`• [${SRC_LABEL[i.src][L]} · ${window.SM.fmtDate(i.date)}] ${i.title[L]}\n  ${i.url}`);
+    const header = L==="ar"
+      ? `أحدث تحديثات العقوبات حتى ${window.SM.fmtDate(window.SANCTIONS_META.lastUpdated.slice(0,10))}:\n\n`
+      : `Latest sanctions updates as of ${window.SM.fmtDate(window.SANCTIONS_META.lastUpdated.slice(0,10))}:\n\n`;
+    return `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(header+lines.join("\n\n"))}`;
+  };
+
+  // ---------- designations (new additions) ----------
+  function desigLine(d, L){
+    const kindTxt = d.type==="entity" ? T.entity[L] : T.individual[L];
+    const parts = [
+      `• ${d.nameEn}  —  ${d.nameAr}`,
+      `   ${kindTxt} · ${SRC_LABEL[d.src][L]} · ${d.program[L]} · ${d.country[L]} · ${window.SM.fmtDate(d.date)}`
+    ];
+    if (d.info && d.info[L]) parts.push(`   ${d.info[L]}`);
+    parts.push(`   ${d.url}`);
+    return parts.join("\n");
+  }
+  window.SM.desigText = function(list){
+    const L=getLang();
+    const head = L==="ar"
+      ? `🚨 مُضافون جدد لقوائم العقوبات (حتى ${window.SM.fmtDate(window.SANCTIONS_META.lastUpdated.slice(0,10))}):`
+      : `🚨 New additions to sanctions lists (as of ${window.SM.fmtDate(window.SANCTIONS_META.lastUpdated.slice(0,10))}):`;
+    return head + "\n\n" + list.map(d=>desigLine(d,L)).join("\n\n");
+  };
+  window.SM.desigMailto = function(list){
+    const L=getLang(); const to=(window.SANCTIONS_META.ownerEmail)||"";
+    const subject = L==="ar" ? "مُضافون جدد لقوائم العقوبات" : "New sanctions list additions";
+    return `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(window.SM.desigText(list))}`;
+  };
+  window.SM.desigWhatsapp = function(list){
+    return `https://wa.me/?text=${encodeURIComponent(window.SM.desigText(list))}`;
+  };
+  window.SM.desigRowHTML = function(d){
+    const L=getLang();
+    const one=[d];
+    return `<tr>
+      <td data-label="${T.hNameEn[L]}"><span class="t-title" dir="ltr" style="unicode-bidi:plaintext">${d.nameEn}</span></td>
+      <td data-label="${T.hNameAr[L]}"><span class="t-title">${d.nameAr}</span></td>
+      <td data-label="${T.hKind2[L]}"><span class="kind-pill">${d.type==="entity"?T.entity[L]:T.individual[L]}</span></td>
+      <td data-label="${T.hAuthority[L]}"><span class="tag ${d.src}">${SRC_LABEL[d.src][L]}</span></td>
+      <td data-label="${T.hProgram[L]}">${d.program[L]}</td>
+      <td data-label="${T.hCountry[L]}"><span class="flag">${d.country.flag||""}</span> ${d.country[L]}</td>
+      <td data-label="${T.hInfo[L]}"><div class="t-desc" style="margin-top:0">${d.role[L]}${d.info&&d.info[L]?` · ${d.info[L]}`:""}</div></td>
+      <td data-label="${T.hShare[L]}"><div class="share-cell">
+        <a class="sh sh-mail" title="${T.sendEmail[L]}" href="${window.SM.desigMailto(one)}">✉️</a>
+        <a class="sh sh-wa" title="${T.sendWa[L]}" target="_blank" rel="noopener" href="${window.SM.desigWhatsapp(one)}">🟢</a>
+        <a class="sh" title="${T.open[L]}" target="_blank" rel="noopener" href="${d.url}">↗</a>
+      </div></td>
+    </tr>`;
+  };
+
+  // ---------- tools grid ----------
+  window.SM.toolsHTML = function(){
+    const L=getLang();
+    return TOOLS.map(t=>`<a class="tool" href="${t.url}" target="_blank" rel="noopener">
+        <div class="t-ico">${t.ico}</div>
+        <h3>${L==="ar"?t.ar:t.en}</h3>
+        <p>${L==="ar"?t.da:t.de}</p>
+        <div class="go">${T.open[L]}</div>
+      </a>`).join("");
+  };
+})();
+
+</script>
+<script>
+let timeRange="all", srcFilter="all";
+function setTime(t){ timeRange=t; renderSanctions(); }
+function setSrc(s){ srcFilter=s; renderSanctions(); }
+function setTab(name){
+  document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active", b.dataset.tab===name));
+  document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("active", p.id==="panel-"+name));
+}
+function filteredItems(){
+  const q=(document.getElementById("q").value||"").trim().toLowerCase();
+  return window.SANCTIONS_ITEMS.filter(i=>{
+    if(srcFilter!=="all" && i.src!==srcFilter) return false;
+    if(timeRange==="today" && SM.daysAgo(i.date)>1) return false;
+    if(timeRange==="d7" && SM.daysAgo(i.date)>7) return false;
+    if(timeRange==="d30" && SM.daysAgo(i.date)>30) return false;
+    if(q){ const h=[i.title.ar,i.title.en,i.body.ar,i.body.en,i.target.ar,i.target.en,i.country.ar,i.country.en].join(" ").toLowerCase(); if(!h.includes(q)) return false; }
+    return true;
+  }).sort((a,b)=>b.date.localeCompare(a.date));
+}
+function renderBrief(){
+  const L=SM.lang(); const items=window.SANCTIONS_ITEMS; const D=window.DESIGNATIONS||[];
+  const totalNew=D.length;
+  const ofacNew=D.filter(d=>d.src==="OFAC").length;
+  const unNew=D.filter(d=>d.src==="UN").length;
+  const fatfChanges=(window.FATF_DATA.changes.added.length+window.FATF_DATA.changes.removed.length);
+  const kpis=[
+    {n:totalNew,i:"🚨",l:{ar:"مضافون جدد (أفراد/كيانات)",en:"New additions (people/entities)"},c:"red"},
+    {n:ofacNew,i:"🏛️",l:{ar:"من OFAC",en:"from OFAC"},c:"blue"},
+    {n:unNew,i:"🌐",l:{ar:"من الأمم المتحدة",en:"from the UN"},c:"green"},
+    {n:fatfChanges,i:"⚖️",l:{ar:"تغييرات FATF",en:"FATF changes"},c:"amber"},
+    {n:window.FATF_DATA.blacklist.length,i:"⛔",l:{ar:"دول القائمة السوداء",en:"Black-list countries"},c:"red"}
+  ];
+  document.getElementById("kpis").innerHTML=kpis.map(k=>`<div class="kpi ${k.c}"><div class="kpi-ico">${k.i}</div><div><div class="n">${k.n}</div><div class="l">${k.l[L]}</div></div></div>`).join("");
+  const hi=[...items].sort((a,b)=>(b.newToList-a.newToList)||b.date.localeCompare(a.date)).slice(0,4);
+  const fatfLine=L==="ar"
+    ? `FATF: أُضيفت ${window.FATF_DATA.changes.added.map(x=>x.ar).join(" و")} للقائمة الرمادية، ورُفعت ${window.FATF_DATA.changes.removed.map(x=>x.ar).join(" و")}.`
+    : `FATF: ${window.FATF_DATA.changes.added.map(x=>x.en).join(" & ")} added to the grey list; ${window.FATF_DATA.changes.removed.map(x=>x.en).join(" & ")} removed.`;
+  document.getElementById("highlights").innerHTML=
+    hi.map(i=>`<li><span class="b-tag ${i.src}">${SM.SRC_LABEL[i.src][L]}</span><span>${i.title[L]}</span></li>`).join("")+
+    `<li><span class="b-tag FATF">FATF</span><span>${fatfLine}</span></li>`;
+}
+function renderSanctions(){
+  const L=SM.lang();
+  document.getElementById("thead-row").innerHTML=
+    [SM.T.hDate,SM.T.hAuthority,SM.T.hType,SM.T.hUpdate,SM.T.hTarget,SM.T.hCountry,SM.T.hSource].map(h=>`<th>${h[L]}</th>`).join("");
+  document.getElementById("q").placeholder=SM.T.search[L];
+  const times=[["all",SM.T.all],["today",SM.T.today],["d7",SM.T.d7],["d30",SM.T.d30]];
+  document.getElementById("time-chips").innerHTML=times.map(([k,l])=>`<span class="chip ${timeRange===k?'active':''}" onclick="setTime('${k}')">${l[L]}</span>`).join("");
+  document.getElementById("src-chips").innerHTML=
+    `<span class="chip ${srcFilter==='all'?'active':''}" onclick="setSrc('all')">${SM.T.all[L]}</span>`+
+    Object.keys(SM.SRC_LABEL).map(s=>`<span class="chip ${srcFilter===s?'active':''}" onclick="setSrc('${s}')">${SM.SRC_LABEL[s][L]}</span>`).join("");
+  const items=filteredItems();
+  document.getElementById("tbody").innerHTML=items.length? items.map(SM.rowHTML).join("") : `<tr><td colspan="7"><div class="empty">${SM.T.empty[L]}</div></td></tr>`;
+  document.getElementById("email-btn").href=SM.buildMailto(items);
+  document.querySelector('[data-i18n="emailBtn"]').textContent=SM.T.emailBtn[L];
+}
+function renderFatf(){
+  const L=SM.lang(); const F=window.FATF_DATA;
+  document.getElementById("fatf-changes").innerHTML=L==="ar"
+    ? `<b>تحديث ${SM.fmtDate(F.asOf)}:</b> أُضيفت <b>${F.changes.added.map(x=>x.ar).join("، ")}</b> إلى القائمة الرمادية، ورُفعت <b>${F.changes.removed.map(x=>x.ar).join("، ")}</b>. القائمة السوداء دون تغيير.`
+    : `<b>Update ${SM.fmtDate(F.asOf)}:</b> <b>${F.changes.added.map(x=>x.en).join(", ")}</b> added to the grey list; <b>${F.changes.removed.map(x=>x.en).join(", ")}</b> removed. Black list unchanged.`;
+  document.getElementById("fatf-black").innerHTML=F.blacklist.map(c=>`<div class="fatf-item action"><span class="flag">${c.flag}</span><span class="cname">${c[L]}</span></div>`).join("");
+  document.getElementById("fatf-grey").innerHTML=F.greylist.map(c=>`<div class="fatf-item"><span class="flag">${c.flag}</span><span class="cname">${c[L]}</span>${c.status==="added"?`<span class="status added" style="margin-inline-start:auto">${L==="ar"?"جديد":"new"}</span>`:""}</div>`).join("");
+  document.getElementById("fatf-count").textContent=L==="ar"?`${F.greylist.length} دولة`:`${F.greylist.length} jurisdictions`;
+  const s=document.getElementById("fatf-src-1"); s.textContent=L==="ar"?"المصدر الرسمي ↗":"Official source ↗"; s.href=F.url;
+}
+let desigSrc="all", desigType="all";
+function setDesigSrc(s){ desigSrc=s; renderDesig(); }
+function setDesigType(t){ desigType=t; renderDesig(); }
+function filteredDesig(){
+  const q=(document.getElementById("dq").value||"").trim().toLowerCase();
+  return (window.DESIGNATIONS||[]).filter(d=>{
+    if(desigSrc!=="all" && d.src!==desigSrc) return false;
+    if(desigType!=="all" && d.type!==desigType) return false;
+    if(q){ const h=[d.nameEn,d.nameAr,d.role.ar,d.role.en,d.country.ar,d.country.en,d.program.ar,d.program.en].join(" ").toLowerCase(); if(!h.includes(q)) return false; }
+    return true;
+  }).sort((a,b)=>b.date.localeCompare(a.date));
+}
+function renderDesig(){
+  const L=SM.lang();
+  document.getElementById("dq").placeholder=SM.T.search[L];
+  document.getElementById("desig-head").innerHTML=
+    [SM.T.hNameEn,SM.T.hNameAr,SM.T.hKind2,SM.T.hAuthority,SM.T.hProgram,SM.T.hCountry,SM.T.hInfo,SM.T.hShare].map(h=>`<th>${h[L]}</th>`).join("");
+  // source chips
+  const srcs=["all",...Array.from(new Set((window.DESIGNATIONS||[]).map(d=>d.src)))];
+  document.getElementById("desig-src").innerHTML=srcs.map(s=>
+    `<span class="chip ${desigSrc===s?'active':''}" onclick="setDesigSrc('${s}')">${s==="all"?SM.T.all[L]:SM.SRC_LABEL[s][L]}</span>`).join("");
+  // type chips
+  const types=[["all",SM.T.all],["individual",SM.T.individual],["entity",SM.T.entity]];
+  document.getElementById("desig-type").innerHTML=types.map(([k,l])=>
+    `<span class="chip ${desigType===k?'active':''}" onclick="setDesigType('${k}')">${l[L]}</span>`).join("");
+  const list=filteredDesig();
+  document.getElementById("desig-body").innerHTML=list.length? list.map(SM.desigRowHTML).join("") : `<tr><td colspan="8"><div class="empty">${SM.T.empty[L]}</div></td></tr>`;
+  document.getElementById("desig-mail").href=SM.desigMailto(list);
+  document.getElementById("desig-wa").href=SM.desigWhatsapp(list);
+  document.querySelector('[data-i18n="sendAllEmail"]').textContent=SM.T.sendAllEmail[L];
+  document.querySelector('[data-i18n="sendAllWa"]').textContent=SM.T.sendAllWa[L];
+}
+function render(){
+  document.getElementById("updated-date").textContent=SM.fmtDate(window.SANCTIONS_META.lastUpdated.slice(0,10));
+  document.getElementById("badge-new").textContent=(window.DESIGNATIONS||[]).length;
+  document.getElementById("badge-sanctions").textContent=window.SANCTIONS_ITEMS.length;
+  document.getElementById("badge-fatf").textContent=window.FATF_DATA.blacklist.length+window.FATF_DATA.greylist.length;
+  renderBrief(); renderDesig(); renderSanctions(); renderFatf();
+  document.getElementById("tools").innerHTML=SM.toolsHTML();
+}
+window.SM._render=render;
+render();
+</script>
+</body>
+</html>
