@@ -1,5 +1,6 @@
-// مُحدِّث مرصد العقوبات — يعمل على GitHub Actions كل ساعة.
-// يحدّث البيانات داخل index.html مباشرة، ويكتب new_designations.md عند وجود مُضافين جدد.
+// مُحدِّث مرصد العقوبات — يعمل على GitHub Actions (مرة يومياً).
+// يحدّث البيانات داخل index.html، ويكتب new_designations.md عند وجود أي جديد
+// (مُضافون جدد للقوائم أو أخبار/تحديثات حديثة) — ليصلك إشعار.
 import fs from "node:fs";
 
 const KEY = process.env.ANTHROPIC_API_KEY;
@@ -40,6 +41,8 @@ async function call() {
 }
 function parseObj(t){ const s=t.indexOf("{"), e=t.lastIndexOf("}"); if(s<0||e<=s) throw new Error("no json"); return JSON.parse(t.slice(s,e+1)); }
 function hash(s){ let h=0; for(let k=0;k<s.length;k++) h=(h*31+s.charCodeAt(k))|0; return h; }
+function daysAgo(d){ return Math.floor((Date.now() - new Date(d+"T00:00:00Z").getTime())/(864e5)); }
+
 function vItems(a){ const o=[]; for(const i of a||[]){ if(!i||!i.src||!i.date||!i.title?.ar||!i.title?.en||!i.country||!i.url) continue;
   if(!["OFAC","EU","UK","UN","Other"].includes(i.src)) i.src="Other";
   if(!i.id) i.id=`${i.src}-${i.date}-${Math.abs(hash(i.title.en))}`;
@@ -51,8 +54,10 @@ function vDes(a){ const o=[]; for(const d of a||[]){ if(!d||!d.src||!d.date||!d.
   if(!d.id) d.id=`d-${d.src}-${d.date}-${Math.abs(hash(d.nameEn))}`;
   d.nameAr=d.nameAr||d.nameEn; d.country.flag=d.country.flag||"🏳️";
   d.program=d.program||{ar:"",en:""}; d.role=d.role||{ar:"",en:""}; d.info=d.info||{ar:"",en:""}; o.push(d);} return o; }
-function prevIds(h){ const m=h.match(/window\.DESIGNATIONS\s*=\s*(\[[\s\S]*?\n\]);/); if(!m) return new Set();
-  try{ return new Set(JSON.parse(m[1]).map(d=>d.id)); }catch{ return new Set(); } }
+
+// استخراج المفاتيح السابقة من index.html (يعمل مع الصيغة القديمة والجديدة)
+function block(html,name){ const m=html.match(new RegExp("window\\."+name+"\\s*=\\s*\\[[\\s\\S]*?\\n\\];")); return m?m[0]:""; }
+function grab(s,key){ const set=new Set(); const re=new RegExp(key+'"?\\s*:\\s*"([^"]+)"',"g"); let m; while((m=re.exec(s))) set.add(m[1]); return set; }
 
 try {
   const obj = parseObj(await call());
@@ -61,7 +66,10 @@ try {
   if (items.length < 3) { console.log(`[update] عناصر قليلة (${items.length}) — إبقاء الملف.`); process.exit(0); }
 
   let html = fs.readFileSync(FILE, "utf8");
-  const pIds = prevIds(html);
+  const prevDesIds  = grab(block(html,"DESIGNATIONS"), "id");
+  const prevItemUrls = grab(block(html,"SANCTIONS_ITEMS"), "url");
+  const hadBaseline = prevDesIds.size > 0 || prevItemUrls.size > 0;
+
   const now = new Date().toISOString().replace(/\.\d+Z$/, "Z");
   const iRe = /window\.SANCTIONS_ITEMS\s*=\s*\[[\s\S]*?\n\];/;
   const dRe = /window\.DESIGNATIONS\s*=\s*\[[\s\S]*?\n\];/;
@@ -72,13 +80,24 @@ try {
   html = html.replace(dRe, `window.DESIGNATIONS = ${JSON.stringify(des, null, 2)};`);
   fs.writeFileSync(FILE, html);
 
-  const fresh = des.filter(d => !pIds.has(d.id));
-  if (fresh.length && pIds.size) {
-    fs.writeFileSync("new_designations.md",
-      `## 🚨 ${fresh.length} مُضاف جديد لقوائم العقوبات\n\n` +
-      fresh.map(d => `- **${d.nameEn}** — ${d.nameAr} · ${d.src} · ${d.program?.en||""} (${d.date})`).join("\n") + "\n");
+  // ما الجديد؟ مُضافون جدد (بالمعرّف) + أخبار جديدة حديثة (برابط لم يظهر سابقاً وتاريخها ضمن 3 أيام)
+  const freshDes = des.filter(d => !prevDesIds.has(d.id));
+  const freshItems = items.filter(i => !prevItemUrls.has(i.url) && daysAgo(i.date) <= 3);
+
+  if (hadBaseline && (freshDes.length || freshItems.length)) {
+    let md = `## 🚨 تحديثات مهمة جديدة — مرصد العقوبات\n`;
+    if (freshDes.length) {
+      md += `\n### مُضافون جدد لقوائم العقوبات (${freshDes.length})\n` +
+        freshDes.map(d => `- **${d.nameEn}** — ${d.nameAr} · ${d.src} · ${d.program?.en||""} (${d.date})`).join("\n") + "\n";
+    }
+    if (freshItems.length) {
+      md += `\n### أخبار وتحديثات حديثة (${freshItems.length})\n` +
+        freshItems.map(i => `- [${i.src} · ${i.date}] ${i.title.ar}\n  ${i.url}`).join("\n") + "\n";
+    }
+    md += `\n🔗 اللوحة: https://wahabmu8.github.io/sanctions-monitor/\n`;
+    fs.writeFileSync("new_designations.md", md);
   }
-  console.log(`[update] تم: ${items.length} تحديث، ${des.length} مُدرَج، جديد: ${fresh.length}.`);
+  console.log(`[update] تم: ${items.length} تحديث، ${des.length} مُدرَج، جديد: ${freshDes.length} أسماء / ${freshItems.length} أخبار.`);
 } catch (e) {
   console.error("[update] فشل، إبقاء الموقع كما هو:", e.message);
   process.exit(0);
