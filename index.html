@@ -340,123 +340,360 @@ html[data-lang="ar"] .ar.block{display:block}
 //  لا تعدّل يدوياً — يُعاد توليده دورياً.
 // ============================================================
 window.SANCTIONS_META = {
-  lastUpdated: "2026-07-17T05:00:00Z",
+  lastUpdated: "2026-07-17T15:54:48Z",
   ownerEmail: "c.almutlaq@gmail.com"
 };
 
 // newToList: true  => إدراج/إضافة جديدة على قائمة (يُحتسب في ملخص المضافين الجدد)
 window.SANCTIONS_ITEMS = [
-  { id:"ofac-ansari-20260710", src:"OFAC", date:"2026-07-10", newToList:true,
-    kind:{ar:"إدراج",en:"Designation"},
-    country:{code:"IR", flag:"🇮🇷", ar:"إيران", en:"Iran"},
-    title:{ar:"إدراج علي أنصاري وشركته Smart Global وشركات صرافة إيرانية",en:"Ali Ansari & Smart Global Limited plus Iranian exchange houses designated"},
-    body:{ar:"عقوبات حجب على 8 أفراد و6 كيانات في إيران والإمارات وهونغ كونغ وسانت كيتس ونيفيس لتسهيل تدفقات مالية غير مشروعة لصالح المرشد الأعلى الإيراني.",en:"Blocking sanctions on 8 individuals and 6 entities across Iran, UAE, Hong Kong and Saint Kitts & Nevis for facilitating illicit financial flows benefiting Iran's Supreme Leader."},
-    target:{ar:"8 أفراد و6 كيانات",en:"8 individuals, 6 entities"},
-    url:"https://ofac.treasury.gov/recent-actions" },
-
-  { id:"ofac-glx1-20260710", src:"OFAC", date:"2026-07-10", newToList:false,
-    kind:{ar:"ترخيص عام",en:"General License"},
-    country:{code:"IR", flag:"🇮🇷", ar:"إيران", en:"Iran"},
-    title:{ar:"إصدار GL X1 لإنهاء معاملات النفط الإيراني حتى 17 يوليو",en:"GL X1 — wind-down of Iran crude oil transactions through July 17"},
-    body:{ar:"إلغاء الترخيص العام X واستبداله بـ X1 يسمح بإنهاء معاملات النفط الخام الإيراني حتى 17 يوليو 2026، إضافة إلى GL Y لإنهاء معاملات Smart Global حتى 9 أغسطس.",en:"GL X revoked and replaced by X1 authorizing wind-down of Iranian crude oil transactions through July 17, 2026, plus GL Y for Smart Global wind-down through August 9."},
-    target:{ar:"قطاع النفط الإيراني",en:"Iran oil sector"},
-    url:"https://ofac.treasury.gov/recent-actions" },
-
-  { id:"ofac-drc-gl2-20260710", src:"OFAC", date:"2026-07-10", newToList:false,
-    kind:{ar:"ترخيص عام",en:"General License"},
-    country:{code:"CD", flag:"🇨🇩", ar:"الكونغو الديمقراطية", en:"DR Congo"},
-    title:{ar:"ترخيص DRC رقم 2 للسلع الزراعية والطبية",en:"DRC General License No. 2 for agricultural & medical trade"},
-    body:{ar:"ترخيص معاملات السلع الزراعية والأدوية والأجهزة الطبية والتجارب السريرية مع الكونغو الديمقراطية ورواندا دون تاريخ انتهاء.",en:"Authorizes agricultural commodities, medicine, medical devices and clinical trial transactions with the DRC and Rwanda, no expiration."},
-    target:{ar:"الكونغو الديمقراطية / رواندا",en:"DR Congo / Rwanda"},
-    url:"https://ofac.treasury.gov/recent-actions" },
-
-  { id:"ofac-russia-gl13-20260708", src:"OFAC", date:"2026-07-08", newToList:false,
-    kind:{ar:"تمديد ترخيص",en:"License extension"},
-    country:{code:"RU", flag:"🇷🇺", ar:"روسيا", en:"Russia"},
-    title:{ar:"تمديد ترخيص روسيا GL 13 لثلاثة أشهر",en:"Russia GL 13 extended by three months"},
-    body:{ar:"تمديد الترخيص العام 13 (ينتهي 9 أكتوبر 2026) للسماح بدفع بعض الضرائب والرسوم للبنك المركزي الروسي ووزارة المالية.",en:"GL 13 extended (expires October 9, 2026), permitting certain tax and fee payments to Russia's Central Bank and Ministry of Finance."},
-    target:{ar:"معاملات إدارية",en:"Administrative payments"},
-    url:"https://ofac.treasury.gov/recent-actions" },
-
-  { id:"un-rsf-1591-20260224", src:"UN", date:"2026-02-24", newToList:true,
-    kind:{ar:"إدراج (لجنة 1591)",en:"Designation (1591 Cttee)"},
-    country:{code:"SD", flag:"🇸🇩", ar:"السودان", en:"Sudan"},
-    title:{ar:"لجنة 1591 تضيف 4 قياديين من قوات الدعم السريع لقائمة عقوبات السودان",en:"UN 1591 Committee adds 4 Rapid Support Forces commanders to Sudan list"},
-    body:{ar:"إدراج عبد الرحيم حمدان دقلو، وقيدو حمدان أحمد، والفاتح عبدالله إدريس، وتيجاني إبراهيم موسى — قياديون في قوات الدعم السريع (RSF).",en:"Listed: Abdul Rahim Hamdan Dagalo, Gedo Hamdan Ahmed, Al-Fateh Abdullah Idris and Tijani Ibrahim Moussa — Rapid Support Forces (RSF) commanders."},
-    target:{ar:"4 أفراد (قوات الدعم السريع)",en:"4 individuals (RSF)"},
-    url:"https://press.un.org/en/2026/sc16303.doc.htm" },
-
-  { id:"bis-uae-20260710", src:"Other", date:"2026-07-10", newToList:false,
-    kind:{ar:"ضوابط تصدير",en:"Export controls"},
-    country:{code:"AE", flag:"🇦🇪", ar:"الإمارات", en:"UAE"},
-    title:{ar:"BIS: رفع الإمارات لمجموعة الدول A:5 وإزالتها من D:3 و D:4",en:"BIS moves UAE to Country Group A:5, removes from D:3/D:4"},
-    body:{ar:"قاعدة نهائية من مكتب الصناعة والأمن (BIS) توسّع المعاملة التفضيلية للإمارات، بما فيها استثناءات ترخيص وترخيص التجارة الاستراتيجية (STA).",en:"A US BIS final rule expands favorable treatment for the UAE, including added license exceptions and Strategic Trade Authorization (STA)."},
-    target:{ar:"ضوابط التصدير",en:"Export controls"},
-    url:"https://www.bis.doc.gov/" },
-
-  { id:"state-syria-sst-20260708", src:"Other", date:"2026-07-08", newToList:false,
-    kind:{ar:"رفع تصنيف",en:"De-listing process"},
-    country:{code:"SY", flag:"🇸🇾", ar:"سوريا", en:"Syria"},
-    title:{ar:"الخارجية الأمريكية تبدأ رفع تصنيف سوريا كدولة راعية للإرهاب",en:"US State Dept begins rescinding Syria's State Sponsor of Terrorism designation"},
-    body:{ar:"بدء إجراء الرفع بفترة إشعار مسبق 45 يوماً، ليصبح نافذاً في 22 أغسطس 2026.",en:"Rescission process initiated with a 45-day pre-notification period; effective August 22, 2026."},
-    target:{ar:"سوريا",en:"Syria"},
-    url:"https://www.state.gov/" },
-
-  { id:"uk-russia-chem-20260706", src:"UK", date:"2026-07-06", newToList:true,
-    kind:{ar:"تجميد أصول",en:"Asset freeze"},
-    country:{code:"RU", flag:"🇷🇺", ar:"روسيا", en:"Russia"},
-    title:{ar:"بريطانيا تدرج 7 أفراد ومعهدين روسيين لبرنامج الأسلحة الكيميائية",en:"UK designates 7 Russians and 2 institutes over chemical weapons"},
-    body:{ar:"تجميد أصول مديري وموظفي SC Signal والمعهد الحكومي للطب العسكري لصلتهم ببرنامج الأسلحة الكيميائية الروسي غير المعلن وتطوير نوفيتشوك.",en:"Asset freezes on directors/staff of SC Signal and the State Research Institute of Military Medicine, linked to Russia's undeclared chemical weapons program and Novichok."},
-    target:{ar:"7 أفراد وكيانان",en:"7 individuals, 2 entities"},
-    url:"https://www.gov.uk/government/publications/the-uk-sanctions-list" },
-
-  { id:"uk-ofsi-fine-20260713", src:"UK", date:"2026-07-13", newToList:false,
-    kind:{ar:"غرامة / إنفاذ",en:"Enforcement"},
-    country:{code:"GB", flag:"🇬🇧", ar:"المملكة المتحدة", en:"United Kingdom"},
-    title:{ar:"OFSI يغرّم شركة تقنية مليون جنيه لخرق العقوبات",en:"OFSI fines tech company £1M for a sanctions breach"},
-    body:{ar:"مكتب تنفيذ العقوبات المالية البريطاني يفرض غرامة مليون جنيه على شركة تقنية — مؤشر على تشدد الإنفاذ (اعرف عميلك والفحص المستمر).",en:"UK OFSI fined a tech company £1M for a sanctions breach — a signal of tougher enforcement (KYC & ongoing screening)."},
-    target:{ar:"إنفاذ",en:"Enforcement"},
-    url:"https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation" },
-
-  { id:"eu-russia-21-20260713", src:"EU", date:"2026-07-13", newToList:false,
-    kind:{ar:"حزمة عقوبات",en:"Sanctions package"},
-    country:{code:"RU", flag:"🇷🇺", ar:"روسيا", en:"Russia"},
-    title:{ar:"الاتحاد الأوروبي يناقش الحزمة الـ21 ضد روسيا ويستهدف ضباط استخبارات",en:"EU debates 21st Russia package; targets intelligence officers"},
-    body:{ar:"تفاوض على الحزمة الـ21 (بنود عالقة حول حظر الدخول وسقف سعر النفط)، مع إدراج ضباط استخبارات روس متهمين بحملة تجسس سيبراني.",en:"Negotiations on the 21st package (open items on entry bans and the crude price cap), plus designation of Russian intelligence officers over a cyber-espionage campaign."},
-    target:{ar:"ضباط استخبارات",en:"Intelligence officers"},
-    url:"https://www.consilium.europa.eu/en/policies/sanctions-against-russia/timeline-sanctions-against-russia/" },
-
-  { id:"eu-smuggling-20260709", src:"EU", date:"2026-07-09", newToList:false,
-    kind:{ar:"نظام عقوبات جديد",en:"New regime"},
-    country:{code:"EU", flag:"🇪🇺", ar:"الاتحاد الأوروبي", en:"European Union"},
-    title:{ar:"مقترح نظام عقوبات ضد مهربي المهاجرين والاتجار بالبشر",en:"Proposed regime targeting migrant smugglers & human traffickers"},
-    body:{ar:"المفوضية الأوروبية تقترح نظاماً أفقياً جديداً يستهدف شبكات التهريب والاتجار بالبشر والمخدرات والأسلحة، ويتطلب موافقة الدول الـ27 بالإجماع.",en:"The European Commission proposed a new horizontal regime targeting smuggling, human trafficking, drugs and firearms networks; requires unanimous approval of all 27 Member States."},
-    target:{ar:"شبكات التهريب",en:"Smuggling networks"},
-    url:"https://www.sanctionsmap.eu/" },
-
-  { id:"un-southsudan-2821-20260701", src:"UN", date:"2026-07-01", newToList:false,
-    kind:{ar:"قرار مجلس الأمن",en:"UNSC Resolution"},
-    country:{code:"SS", flag:"🇸🇸", ar:"جنوب السودان", en:"South Sudan"},
-    title:{ar:"مجلس الأمن يجدد عقوبات جنوب السودان لعام (القرار 2821)",en:"UNSC renews South Sudan sanctions for one year (Res. 2821)"},
-    body:{ar:"تجديد نظام العقوبات على جنوب السودان لمدة عام (حظر سلاح وتجميد أصول ومنع سفر).",en:"Renewed the South Sudan sanctions regime for one year (arms embargo, asset freeze, travel ban)."},
-    target:{ar:"جنوب السودان",en:"South Sudan"},
-    url:"https://press.un.org/en/2026/sc16374.doc.htm" },
-
-  { id:"un-libya-2819-20260625", src:"UN", date:"2026-06-25", newToList:false,
-    kind:{ar:"قرار مجلس الأمن",en:"UNSC Resolution"},
-    country:{code:"LY", flag:"🇱🇾", ar:"ليبيا", en:"Libya"},
-    title:{ar:"تمديد نظام عقوبات ليبيا حتى أغسطس 2027 (القرار 2819)",en:"Libya sanctions regime extended to August 2027 (Res. 2819)"},
-    body:{ar:"تمديد نظام العقوبات على ليبيا مع إنشاء استثناءات لتجميد الأصول وحظر السلاح.",en:"Extended Libya's sanctions regime and created exemptions to the asset freeze and arms embargo."},
-    target:{ar:"ليبيا",en:"Libya"},
-    url:"https://press.un.org/en/2026/sc16337.doc.htm" },
-
-  { id:"japan-jetfuel-20260707", src:"Other", date:"2026-07-07", newToList:false,
-    kind:{ar:"إنفاذ",en:"Enforcement"},
-    country:{code:"RU", flag:"🇷🇺", ar:"روسيا", en:"Russia"},
-    title:{ar:"اليابان توضّح شمول حظر وقود الطائرات لروسيا للتحويلات غير المباشرة",en:"Japan clarifies jet fuel export ban to Russia covers indirect transfers"},
-    body:{ar:"اليابان توضح أن حظر تصدير وقود الطائرات إلى روسيا يشمل التحويلات غير المباشرة والنقل من سفينة إلى سفينة.",en:"Japan clarified its jet fuel export ban to Russia covers indirect transfers and ship-to-ship transfers."},
-    target:{ar:"الطاقة",en:"Energy"},
-    url:"https://www.sanctionsexpert.com/" }
+  {
+    "id": "ofac-iran-2026-07-15",
+    "src": "OFAC",
+    "date": "2026-07-15",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات منع انتشار أسلحة",
+      "en": "Non-Proliferation Sanctions"
+    },
+    "country": {
+      "code": "IR",
+      "flag": "🇮🇷",
+      "ar": "إيران",
+      "en": "Iran"
+    },
+    "title": {
+      "ar": "استهداف شبكة عالمية لشراء الأسلحة للحرس الثوري الإيراني",
+      "en": "Global Network Procuring Weapons for IRGC Targeted"
+    },
+    "body": {
+      "ar": "فرض عقوبات على 7 أفراد وكيانات متورطين في شبكة دولية تدعم جهود شراء الأسلحة نيابة عن الحرس الثوري الإيراني بعد هجمات إيران على السفن التجارية في مضيق هرمز",
+      "en": "Sanctioned 7 individuals and entities involved in an international network supporting weapons procurement efforts on behalf of the IRGC following Iran's attacks on commercial vessels in the Strait of Hormuz"
+    },
+    "target": {
+      "ar": "شبكة شراء الأسلحة للحرس الثوري",
+      "en": "IRGC weapons procurement network"
+    },
+    "url": "https://home.treasury.gov/news/press-releases/sb0564"
+  },
+  {
+    "id": "ofac-iran-shamkhani-2026-07-14",
+    "src": "OFAC",
+    "date": "2026-07-14",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات إيران",
+      "en": "Iran Sanctions"
+    },
+    "country": {
+      "code": "IR",
+      "flag": "🇮🇷",
+      "ar": "إيران",
+      "en": "Iran"
+    },
+    "title": {
+      "ar": "تكثيف الضغط على إمبراطورية الشحن غير المشروعة لشمخاني",
+      "en": "Intensifying Pressure on Shamkhani's Illicit Shipping Empire"
+    },
+    "body": {
+      "ar": "فرض عقوبات على أكثر من 50 فرداً وكياناً وسفينة تمكن شمخاني والنظام الإيراني من الاستمرار في التربح من صادرات النفط والشحن العالمي والتهرب من العقوبات",
+      "en": "Sanctioned more than 50 individuals, entities, and vessels enabling Shamkhani and the Iranian regime to continue profiting from oil exports, global shipping, and sanctions evasion"
+    },
+    "target": {
+      "ar": "شبكة محمد حسين شمخاني",
+      "en": "Mohammad Hossein Shamkhani network"
+    },
+    "url": "https://home.treasury.gov/news/press-releases/sb0562"
+  },
+  {
+    "id": "ofac-cyber-2026-07-16",
+    "src": "OFAC",
+    "date": "2026-07-16",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات سيبرانية",
+      "en": "Cyber Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "title": {
+      "ar": "استهداف مزودي برامج ضارة وبنية تحتية لهجمات الفدية",
+      "en": "Malware and Infrastructure Providers Supporting Ransomware Targeted"
+    },
+    "body": {
+      "ar": "فرض عقوبات على فردين وكيان واحد يمكّنون الجهات الفاعلة في برامج الفدية والمجرمين السيبرانيين، بما في ذلك خدمة First VPN ومديرها دميترو راشيفسكي",
+      "en": "Designated two individuals and one entity enabling ransomware actors and cybercriminals, including First VPN Service and its administrator Dmytro Rashevskyi"
+    },
+    "target": {
+      "ar": "مزودو خدمات VPN وأدوات تشفير البرامج الضارة",
+      "en": "VPN providers and malware cryptors"
+    },
+    "url": "https://home.treasury.gov/news/press-releases/sb0559"
+  },
+  {
+    "id": "ofac-iran-ansari-2026-07-10",
+    "src": "OFAC",
+    "date": "2026-07-10",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات إيران",
+      "en": "Iran Sanctions"
+    },
+    "country": {
+      "code": "IR",
+      "flag": "🇮🇷",
+      "ar": "إيران",
+      "en": "Iran"
+    },
+    "title": {
+      "ar": "عقوبات على علي أنصاري وشبكته المالية العالمية",
+      "en": "Sanctions on Ali Ansari and His Global Financial Network"
+    },
+    "body": {
+      "ar": "فرض عقوبات على الممول علي أنصاري الذي يشرف على شبكة عالمية من الأصول تفيد قائد إيران مجتبى خامنئي ونخب النظام من خلال اختلاس واستثمارات خارجية",
+      "en": "Sanctioned financier Ali Ansari who oversees a global network of assets benefiting Iran's leader Mojtaba Khamenei and regime elites through embezzlement and overseas investments"
+    },
+    "target": {
+      "ar": "علي أنصاري وسمارت غلوبال ليميتد",
+      "en": "Ali Ansari and Smart Global Limited"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260710"
+  },
+  {
+    "id": "ofac-narcotics-2026-07-01",
+    "src": "OFAC",
+    "date": "2026-07-01",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات مكافحة المخدرات",
+      "en": "Counter Narcotics Sanctions"
+    },
+    "country": {
+      "code": "BR",
+      "flag": "🇧🇷",
+      "ar": "البرازيل",
+      "en": "Brazil"
+    },
+    "title": {
+      "ar": "استهداف شبكة PCC الإجرامية في البرازيل",
+      "en": "PCC Criminal Network in Brazil Targeted"
+    },
+    "body": {
+      "ar": "فرض عقوبات على مواطنين برازيليين وشركات برازيلية وبرتغالية لصلتهم بمنظمة Primeiro Comando da Capital الإجرامية البرازيلية",
+      "en": "Sanctioned Brazilian nationals and companies for links to Primeiro Comando da Capital (PCC), a Brazilian criminal organization"
+    },
+    "target": {
+      "ar": "شبكة غسيل أموال PCC",
+      "en": "PCC money laundering network"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260701"
+  },
+  {
+    "id": "eu-russia-cyber-2026-07-13",
+    "src": "EU",
+    "date": "2026-07-13",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات سيبرانية",
+      "en": "Cyber Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "title": {
+      "ar": "الاتحاد الأوروبي يستهدف النظام البيئي السيبراني الروسي الخبيث",
+      "en": "EU Targets Russia's Malicious Cyber Ecosystem"
+    },
+    "body": {
+      "ar": "فرض عقوبات على 9 أفراد و4 كيانات مسؤولين عن هجمات سيبرانية ضد دول الاتحاد الأوروبي، بما في ذلك ضباط مخابرات GRU ومجرمون سيبرانيون وشركات خاصة",
+      "en": "Sanctioned 9 individuals and 4 entities responsible for cyberattacks against EU states, including GRU intelligence officers, cybercriminals, and private companies"
+    },
+    "target": {
+      "ar": "المركز 16 لجهاز الأمن الفيدرالي الروسي",
+      "en": "16th Center of Russia's FSB"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/13/russian-cyber-attacks-and-destabilising-activities-council-sanctions-nine-individuals-and-four-entities/"
+  },
+  {
+    "id": "eu-russia-pow-2026-07-13",
+    "src": "EU",
+    "date": "2026-07-13",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات حقوق الإنسان",
+      "en": "Human Rights Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "title": {
+      "ar": "انتهاكات حقوق الإنسان ضد أسرى الحرب الأوكرانيين",
+      "en": "Human Rights Violations Against Ukrainian POWs"
+    },
+    "body": {
+      "ar": "فرض عقوبات على 15 فرداً وكيان واحد مسؤولين عن التعذيب والمعاملة القاسية لأسرى الحرب الأوكرانيين والمعتقلين المدنيين في الأراضي المحتلة",
+      "en": "Sanctioned 15 individuals and 1 entity responsible for torture and cruel treatment of Ukrainian POWs and civilian detainees in occupied territories"
+    },
+    "target": {
+      "ar": "مسؤولو مستعمرات العقوبات الروسية",
+      "en": "Russian penal colony officials"
+    },
+    "url": "https://www.consilium.europa.eu/en/policies/sanctions-against-russia/timeline-sanctions-against-russia/"
+  },
+  {
+    "id": "eu-russia-surveillance-2026-07-13",
+    "src": "EU",
+    "date": "2026-07-13",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات حقوق الإنسان",
+      "en": "Human Rights Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "title": {
+      "ar": "استهداف شركات المراقبة التقنية في روسيا",
+      "en": "Targeting Russia's Surveillance Tech Companies"
+    },
+    "body": {
+      "ar": "فرض عقوبات على 4 أفراد و5 كيانات مسؤولين عن استخدام التقنيات الجديدة لتقييد حرية التعبير والوصول إلى المعلومات وحرية تكوين الجمعيات",
+      "en": "Sanctioned 4 individuals and 5 entities responsible for using new technologies to restrict freedom of expression, access to information and freedom of association"
+    },
+    "target": {
+      "ar": "مطورو نظام SORM وتطبيق Max App",
+      "en": "SORM system and Max App developers"
+    },
+    "url": "https://www.consilium.europa.eu/en/policies/sanctions-against-russia/timeline-sanctions-against-russia/"
+  },
+  {
+    "id": "eu-russia-chemical-2026-07-03",
+    "src": "EU",
+    "date": "2026-07-03",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات أسلحة كيميائية",
+      "en": "Chemical Weapons Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "title": {
+      "ar": "عقوبات على علماء الأسلحة الكيميائية المتورطين في تسميم نافالني",
+      "en": "Chemical Weapons Scientists Involved in Navalny Poisoning"
+    },
+    "body": {
+      "ar": "فرض عقوبات على 6 أفراد روس متورطين في تطوير الأسلحة الكيميائية، وخاصة سم الإيبيباتيدين الذي استخدم في تسميم ألكسي نافالني",
+      "en": "Sanctioned 6 Russian individuals involved in development of chemical weapons, notably epibatidine toxin used in poisoning of Alexei Navalny"
+    },
+    "target": {
+      "ar": "علماء وباحثون عسكريون روس",
+      "en": "Russian military scientists and researchers"
+    },
+    "url": "https://www.consilium.europa.eu/en/policies/sanctions-against-russia/timeline-sanctions-against-russia/"
+  },
+  {
+    "id": "uk-russia-chemical-2026-07-10",
+    "src": "UK",
+    "date": "2026-07-10",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات أسلحة كيميائية",
+      "en": "Chemical Weapons Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "title": {
+      "ar": "بريطانيا تستهدف معاهد الأبحاث الكيميائية الروسية",
+      "en": "UK Targets Russian Chemical Research Institutes"
+    },
+    "body": {
+      "ar": "فرض عقوبات على 7 أفراد وكيانين روس متورطين في تطوير سموم نوفيتشوك والإيبيباتيدين المستخدمة في تسميم ألكسي نافالني ودون ستورغيس",
+      "en": "Designated 7 individuals and 2 entities involved in development of Novichok and Epibatidine toxins used in poisonings of Alexei Navalny and Dawn Sturgess"
+    },
+    "target": {
+      "ar": "SC Signal ومعهد أبحاث الطب العسكري",
+      "en": "SC Signal and State Research Institute of Military Medicine"
+    },
+    "url": "https://www.gov.uk/government/publications/the-uk-sanctions-list"
+  },
+  {
+    "id": "un-drc-2026-07-14",
+    "src": "UN",
+    "date": "2026-07-14",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات الأمم المتحدة",
+      "en": "UN Sanctions"
+    },
+    "country": {
+      "code": "CD",
+      "flag": "🇨🇩",
+      "ar": "جمهورية الكونغو الديمقراطية",
+      "en": "Democratic Republic of Congo"
+    },
+    "title": {
+      "ar": "إضافة 8 مدرجين إلى قائمة عقوبات الكونغو الديمقراطية",
+      "en": "Eight Entries Added to DRC Sanctions List"
+    },
+    "body": {
+      "ar": "أضافت لجنة مجلس الأمن 8 مدرجات جديدة من الأفراد والكيانات إلى قائمة العقوبات المتعلقة بجمهورية الكونغو الديمقراطية",
+      "en": "UN Security Council Committee added 8 new entries of individuals and entities to DRC sanctions list"
+    },
+    "target": {
+      "ar": "أفراد وكيانات في جمهورية الكونغو الديمقراطية",
+      "en": "Individuals and entities in DRC"
+    },
+    "url": "https://main.un.org/securitycouncil/en/sanctions/1533"
+  },
+  {
+    "id": "un-isil-2026-07-08",
+    "src": "UN",
+    "date": "2026-07-08",
+    "newToList": false,
+    "kind": {
+      "ar": "تعديل قائمة عقوبات",
+      "en": "Sanctions List Amendment"
+    },
+    "country": {
+      "code": "UG",
+      "flag": "🇺🇬",
+      "ar": "أوغندا",
+      "en": "Uganda"
+    },
+    "title": {
+      "ar": "تعديل مدرج في قائمة عقوبات داعش والقاعدة",
+      "en": "Amendment to ISIL and Al-Qaida Sanctions List Entry"
+    },
+    "body": {
+      "ar": "عدلت لجنة مجلس الأمن مدرجاً واحداً في قائمة عقوبات داعش والقاعدة يتعلق بوسيط تمويل داعش في وسط أفريقيا",
+      "en": "Security Council Committee amended one entry on ISIL and Al-Qaida sanctions list related to ISIL financing mediator in Central Africa"
+    },
+    "target": {
+      "ar": "وسيط تمويل داعش",
+      "en": "ISIL financing mediator"
+    },
+    "url": "https://press.un.org/en/2026/sc16407.doc.htm"
+  }
 ];
 
 // ===== FATF (المجموعة السوداء والرمادية) — اجتماع 19 يونيو 2026 =====
@@ -501,200 +738,654 @@ window.FATF_DATA = {
 // ===== المضافون الجدد لقوائم العقوبات (أفراد وكيانات) =====
 // New additions to sanctions lists (individuals & entities)
 window.DESIGNATIONS = [
-  // OFAC — 10 يوليو 2026 (إيران: مموّلو المرشد وشبكة الصرافة)
-  { id:"d-ofac-ali-ansari", date:"2026-07-10", src:"OFAC", type:"individual",
-    nameEn:"Ali Ansari", nameAr:"علي أنصاري",
-    program:{ar:"إيران — تمويل",en:"Iran — financing"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران (مقيم بدبي)",en:"Iran (Dubai-based)"},
-    role:{ar:"ميسّر مالي — المالك والمدير السابق لبنك آينده",en:"Financial facilitator — former owner/director of Ayandeh Bank"},
-    info:{ar:"جنسية إيرانية، مقيم في دبي",en:"Iranian national, based in Dubai"},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-darbani", date:"2026-07-10", src:"OFAC", type:"individual",
-    nameEn:"Mohammad Darbani", nameAr:"محمد درباني",
-    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
-    role:{ar:"رئيس شركة محمد درباني وشركاه للصرافة",en:"Chairman, Mohammad Darbani & Partners Exchange"},
-    info:{ar:"شريك مسيطر",en:"Controlling partner"},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-rostamabadi", date:"2026-07-10", src:"OFAC", type:"individual",
-    nameEn:"Shokufeh Rostam Abadi", nameAr:"شكوفه رستم آبادي",
-    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
-    role:{ar:"الرئيس التنفيذي لشركة درباني وشركاه للصرافة",en:"CEO, Darbani & Partners Exchange"},
-    info:{ar:"شريك مسيطر",en:"Controlling partner"},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-sarshari", date:"2026-07-10", src:"OFAC", type:"individual",
-    nameEn:"Zahra Sarshari", nameAr:"زهرا سرشاري",
-    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
-    role:{ar:"عضو مجلس إدارة شركة درباني وشركاه للصرافة",en:"Board member, Darbani & Partners Exchange"},
-    info:{ar:"شريك مسيطر",en:"Controlling partner"},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-ahmad-lavasani", date:"2026-07-10", src:"OFAC", type:"individual",
-    nameEn:"Ahmad Navai Lavasani", nameAr:"أحمد نوائي لواساني",
-    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
-    role:{ar:"الرئيس التنفيذي لشركة لواساني وشركاه",en:"CEO, Lavasani & Partners"},
-    info:{ar:"شريك مسيطر",en:"Controlling partner"},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-amir-lavasani", date:"2026-07-10", src:"OFAC", type:"individual",
-    nameEn:"Amir Navai Lavasani", nameAr:"أمير نوائي لواساني",
-    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
-    role:{ar:"رئيس شركة لواساني وشركاه",en:"Chairman, Lavasani & Partners"},
-    info:{ar:"شريك مسيطر",en:"Controlling partner"},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-mohsen-khandan", date:"2026-07-10", src:"OFAC", type:"individual",
-    nameEn:"Mohsen Khandan", nameAr:"محسن خندان",
-    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
-    role:{ar:"الرئيس التنفيذي لشركة محسن خندان وشركاه",en:"CEO, Mohsen Khandan & Partners"},
-    info:{ar:"شريك مسيطر",en:"Controlling partner"},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-aliasghar-khandan", date:"2026-07-10", src:"OFAC", type:"individual",
-    nameEn:"Ali Asghar Khandan", nameAr:"علي أصغر خندان",
-    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
-    role:{ar:"عضو مجلس إدارة شركة محسن خندان وشركاه",en:"Board member, Mohsen Khandan & Partners"},
-    info:{ar:"شريك مسيطر",en:"Controlling partner"},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-smartglobal", date:"2026-07-10", src:"OFAC", type:"entity",
-    nameEn:"Smart Global Limited", nameAr:"سمارت غلوبال ليمتد",
-    program:{ar:"إيران — تمويل",en:"Iran — financing"},
-    country:{code:"KN",flag:"🇰🇳",ar:"سانت كيتس ونيفيس",en:"Saint Kitts & Nevis"},
-    role:{ar:"شركة قابضة (أداة استثمار عقاري وتجاري)",en:"Holding company (real-estate/commercial investment vehicle)"},
-    info:{ar:"مرتبطة بعلي أنصاري",en:"Linked to Ali Ansari"},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-darbani-ex", date:"2026-07-10", src:"OFAC", type:"entity",
-    nameEn:"Mohammad Darbani and Partners Exchange", nameAr:"شركة محمد درباني وشركاه للصرافة",
-    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
-    role:{ar:"شركة صرافة (Shadow exchange)",en:"Currency exchange house"},
-    info:{ar:"",en:""},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-lavasani-ex", date:"2026-07-10", src:"OFAC", type:"entity",
-    nameEn:"Lavasani and Partners General Partnership", nameAr:"شركة لواساني وشركاه",
-    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
-    role:{ar:"شركة صرافة",en:"Currency exchange house"},
-    info:{ar:"",en:""},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-khandan-ex", date:"2026-07-10", src:"OFAC", type:"entity",
-    nameEn:"Mohsen Khandan and Partners General Partnership", nameAr:"شركة محسن خندان وشركاه",
-    program:{ar:"إيران — صرافة",en:"Iran — exchange"},
-    country:{code:"IR",flag:"🇮🇷",ar:"إيران",en:"Iran"},
-    role:{ar:"شركة صرافة",en:"Currency exchange house"},
-    info:{ar:"",en:""},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-cdm", date:"2026-07-10", src:"OFAC", type:"entity",
-    nameEn:"CDM Trading Limited", nameAr:"سي دي إم تريدينغ ليمتد",
-    program:{ar:"إيران — واجهة",en:"Iran — front company"},
-    country:{code:"HK",flag:"🇭🇰",ar:"هونغ كونغ",en:"Hong Kong"},
-    role:{ar:"شركة واجهة للمعاملات المالية",en:"Front company for financial transactions"},
-    info:{ar:"",en:""},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-  { id:"d-ofac-naba", date:"2026-07-10", src:"OFAC", type:"entity",
-    nameEn:"Naba Alzaki Raw Materials Trading LLC", nameAr:"نبأ الزكي لتجارة المواد الخام ش.ذ.م.م",
-    program:{ar:"إيران — واجهة",en:"Iran — front company"},
-    country:{code:"AE",flag:"🇦🇪",ar:"الإمارات",en:"UAE"},
-    role:{ar:"شركة واجهة تستخدمها شركات الصرافة الإيرانية",en:"Front company used by Iranian exchange houses"},
-    info:{ar:"",en:""},
-    url:"https://ofac.treasury.gov/recent-actions/20260710_33" },
-
-  // UK — 6 يوليو 2026 (روسيا: برنامج الأسلحة الكيميائية)
-  { id:"d-uk-zhirov", date:"2026-07-06", src:"UK", type:"individual",
-    nameEn:"Artur Zhirov", nameAr:"أرتور جيروف",
-    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
-    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
-    role:{ar:"مدير معهد SC Signal",en:"Director of SC Signal"},
-    info:{ar:"",en:""},
-    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
-  { id:"d-uk-antokhin", date:"2026-07-06", src:"UK", type:"individual",
-    nameEn:"Andrei Antokhin", nameAr:"أندريه أنطوخين",
-    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
-    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
-    role:{ar:"نائب رئيس معهد SC Signal",en:"Deputy Head of SC Signal"},
-    info:{ar:"",en:""},
-    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
-  { id:"d-uk-chepur", date:"2026-07-06", src:"UK", type:"individual",
-    nameEn:"Sergei Chepur", nameAr:"سيرغي تشيبور",
-    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
-    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
-    role:{ar:"رئيس معهد أبحاث الطب العسكري (GNIII VM)",en:"Head of GNIII VM"},
-    info:{ar:"",en:""},
-    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
-  { id:"d-uk-kondratyev", date:"2026-07-06", src:"UK", type:"individual",
-    nameEn:"Vladimir Kondratyev", nameAr:"فلاديمير كوندراتييف",
-    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
-    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
-    role:{ar:"مدير في معهد GosNIIOKhT",en:"Director at GosNIIOKhT"},
-    info:{ar:"",en:""},
-    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
-  { id:"d-uk-makhlay", date:"2026-07-06", src:"UK", type:"individual",
-    nameEn:"Aleksandr Makhlay", nameAr:"ألكسندر مخلاي",
-    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
-    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
-    role:{ar:"كبير العلماء في معهد SC Signal",en:"Chief Scientist, SC Signal"},
-    info:{ar:"",en:""},
-    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
-  { id:"d-uk-kravstov", date:"2026-07-06", src:"UK", type:"individual",
-    nameEn:"Ivan Kravstov", nameAr:"إيفان كرافتسوف",
-    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
-    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
-    role:{ar:"رئيس قسم الأبحاث الرابع في SC Signal",en:"Head of 4th Research Dept, SC Signal"},
-    info:{ar:"",en:""},
-    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
-  { id:"d-uk-taranchenko", date:"2026-07-06", src:"UK", type:"individual",
-    nameEn:"Viktor Taranchenko", nameAr:"فيكتور تارانتشينكو",
-    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
-    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
-    role:{ar:"رئيس مركز الأبحاث الأول في SC Signal",en:"Head of 1st Research Centre, SC Signal"},
-    info:{ar:"",en:""},
-    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
-  { id:"d-uk-scsignal", date:"2026-07-06", src:"UK", type:"entity",
-    nameEn:"SC Signal (NTs Signal)", nameAr:"إس سي سيغنال (NTs Signal)",
-    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
-    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
-    role:{ar:"معهد أبحاث علمي حكومي روسي",en:"Russian state scientific research institute"},
-    info:{ar:"",en:""},
-    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
-  { id:"d-uk-gniiivm", date:"2026-07-06", src:"UK", type:"entity",
-    nameEn:"GNIII VM (State Research Institute of Military Medicine)", nameAr:"معهد أبحاث الطب العسكري الحكومي (GNIII VM)",
-    program:{ar:"روسيا — أسلحة كيميائية",en:"Russia — chemical weapons"},
-    country:{code:"RU",flag:"🇷🇺",ar:"روسيا",en:"Russia"},
-    role:{ar:"معهد حكومي روسي للطب العسكري",en:"Russian state institute of military medicine"},
-    info:{ar:"",en:""},
-    url:"https://www.gov.uk/government/news/uk-sanctions-russians-developing-chemical-weapons-used-to-kill-alexei-navalny-and-dawn-sturgess" },
-
-  // UN — 24 فبراير 2026 (لجنة 1591 — السودان / قوات الدعم السريع)
-  { id:"d-un-dagalo", date:"2026-02-24", src:"UN", type:"individual",
-    nameEn:"Abdul Rahim Hamdan Dagalo", nameAr:"عبد الرحيم حمدان دقلو",
-    program:{ar:"السودان (لجنة 1591)",en:"Sudan (1591 Committee)"},
-    country:{code:"SD",flag:"🇸🇩",ar:"السودان",en:"Sudan"},
-    role:{ar:"نائب قائد قوات الدعم السريع (RSF)",en:"Deputy Leader, Rapid Support Forces (RSF)"},
-    info:{ar:"تاريخ الميلاد: 1 يناير 1972 — الخرطوم",en:"DOB: 1 Jan 1972 — Khartoum"},
-    url:"https://press.un.org/en/2026/sc16303.doc.htm" },
-  { id:"d-un-gedo", date:"2026-02-24", src:"UN", type:"individual",
-    nameEn:"Gedo Hamdan Ahmed (Abu Nashuk)", nameAr:"قيدو حمدان أحمد (أبو نشوك)",
-    program:{ar:"السودان (لجنة 1591)",en:"Sudan (1591 Committee)"},
-    country:{code:"SD",flag:"🇸🇩",ar:"السودان",en:"Sudan"},
-    role:{ar:"قائد قطاع شمال دارفور في قوات الدعم السريع",en:"Commander, North Darfur sector, RSF"},
-    info:{ar:"كنية: أبو نشوك",en:"Alias: Abu Nashuk"},
-    url:"https://press.un.org/en/2026/sc16303.doc.htm" },
-  { id:"d-un-idris", date:"2026-02-24", src:"UN", type:"individual",
-    nameEn:"Al-Fateh Abdullah Idris (Abu Lulu)", nameAr:"الفاتح عبدالله إدريس (أبو لولو)",
-    program:{ar:"السودان (لجنة 1591)",en:"Sudan (1591 Committee)"},
-    country:{code:"SD",flag:"🇸🇩",ar:"السودان",en:"Sudan"},
-    role:{ar:"عميد في قوات الدعم السريع",en:"Brigadier General, RSF"},
-    info:{ar:"كنية: أبو لولو",en:"Alias: Abu Lulu"},
-    url:"https://press.un.org/en/2026/sc16303.doc.htm" },
-  { id:"d-un-tijani", date:"2026-02-24", src:"UN", type:"individual",
-    nameEn:"Tijani Ibrahim Moussa Mohamed (Al Zeir Salem)", nameAr:"تيجاني إبراهيم موسى محمد (الزير سالم)",
-    program:{ar:"السودان (لجنة 1591)",en:"Sudan (1591 Committee)"},
-    country:{code:"SD",flag:"🇸🇩",ar:"السودان",en:"Sudan"},
-    role:{ar:"قائد ميداني في قوات الدعم السريع",en:"Field Commander, RSF"},
-    info:{ar:"كنية: الزير سالم",en:"Alias: Al Zeir Salem"},
-    url:"https://press.un.org/en/2026/sc16303.doc.htm" }
+  {
+    "id": "d-ofac-namazi-behrouz",
+    "date": "2026-07-15",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Behrouz Namazi",
+    "nameAr": "بهروز نمازي",
+    "program": {
+      "ar": "منع انتشار أسلحة الدمار الشامل",
+      "en": "Non-Proliferation WMD"
+    },
+    "country": {
+      "code": "IR",
+      "flag": "🇮🇷",
+      "ar": "إيران",
+      "en": "Iran"
+    },
+    "role": {
+      "ar": "وسيط شراء أسلحة للحرس الثوري",
+      "en": "IRGC weapons procurement facilitator"
+    },
+    "info": {
+      "ar": "م: 22 يوليو 1987، طهران، إيران",
+      "en": "DOB: 22 Jul 1987, Tehran, Iran"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260715"
+  },
+  {
+    "id": "d-ofac-druzhbin-vadim",
+    "date": "2026-07-15",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Vadim Anatolyevich Druzhbin",
+    "nameAr": "فاديم أناتولييفيتش دروجبين",
+    "program": {
+      "ar": "منع انتشار أسلحة الدمار الشامل",
+      "en": "Non-Proliferation WMD"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "مرتبط بشركة أفراتيك",
+      "en": "Linked to Avratek OOO"
+    },
+    "info": {
+      "ar": "م: 10 مايو 1987، روسيا",
+      "en": "DOB: 10 May 1987, Russia"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260715"
+  },
+  {
+    "id": "d-ofac-ettaib-dounia",
+    "date": "2026-07-15",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Dounia Ettaib",
+    "nameAr": "دونيا الطيب",
+    "program": {
+      "ar": "منع انتشار أسلحة الدمار الشامل",
+      "en": "Non-Proliferation WMD"
+    },
+    "country": {
+      "code": "IT",
+      "flag": "🇮🇹",
+      "ar": "إيطاليا",
+      "en": "Italy"
+    },
+    "role": {
+      "ar": "مرتبطة ببهروز نمازي",
+      "en": "Linked to Behrouz Namazi"
+    },
+    "info": {
+      "ar": "م: 27 أبريل 1979، الدار البيضاء، المغرب",
+      "en": "DOB: 27 Apr 1979, Casablanca, Morocco"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260715"
+  },
+  {
+    "id": "d-ofac-vanguard-tactical",
+    "date": "2026-07-15",
+    "src": "OFAC",
+    "type": "entity",
+    "nameEn": "Vanguard Tactical Supply Limited",
+    "nameAr": "فانغارد تاكتيكال سبلاي ليميتد",
+    "program": {
+      "ar": "منع انتشار أسلحة الدمار الشامل",
+      "en": "Non-Proliferation WMD"
+    },
+    "country": {
+      "code": "NG",
+      "flag": "🇳🇬",
+      "ar": "نيجيريا",
+      "en": "Nigeria"
+    },
+    "role": {
+      "ar": "شركة شراء أسلحة مرتبطة بنمازي",
+      "en": "Weapons procurement company linked to Namazi"
+    },
+    "info": {
+      "ar": "تأسست: 20 مايو 2026، أبوجا",
+      "en": "Established: 20 May 2026, Abuja"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260715"
+  },
+  {
+    "id": "d-ofac-moghadas-behzad",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Behzad Moghadas",
+    "nameAr": "بهزاد مقدس",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "IR",
+      "flag": "🇮🇷",
+      "ar": "إيران",
+      "en": "Iran"
+    },
+    "role": {
+      "ar": "مرتبط بشبكة شمخاني",
+      "en": "Linked to Shamkhani network"
+    },
+    "info": {
+      "ar": "م: 27 يوليو 1987، الإمارات وإيران",
+      "en": "DOB: 27 Jul 1987, UAE and Iran"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-zahed-hossein",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Hossein Ghorbani Zahed",
+    "nameAr": "حسين غرباني زاهد",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "IR",
+      "flag": "🇮🇷",
+      "ar": "إيران",
+      "en": "Iran"
+    },
+    "role": {
+      "ar": "ممول لشبكة شمخاني",
+      "en": "Financier for Shamkhani network"
+    },
+    "info": {
+      "ar": "م: 13 أكتوبر 1982، طهران، إيران",
+      "en": "DOB: 13 Oct 1982, Tehran, Iran"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-rahbarmadani-mohammad",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Mohammad Reza Rahbar Madani",
+    "nameAr": "محمد رضا رهبر مدني",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "IR",
+      "flag": "🇮🇷",
+      "ar": "إيران",
+      "en": "Iran"
+    },
+    "role": {
+      "ar": "ممول لشبكة شمخاني",
+      "en": "Financier for Shamkhani network"
+    },
+    "info": {
+      "ar": "م: 10 يونيو 1973، طهران، جواز دومينيكا",
+      "en": "DOB: 10 Jun 1973, Tehran, Dominica passport"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-rakhbarmadani-ali",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Ali Rakhbarmadani",
+    "nameAr": "علي رخبرمدني",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "IR",
+      "flag": "🇮🇷",
+      "ar": "إيران",
+      "en": "Iran"
+    },
+    "role": {
+      "ar": "إيراني-روسي مرتبط بشمخاني",
+      "en": "Iranian-Russian dual national linked to Shamkhani"
+    },
+    "info": {
+      "ar": "م: 28 يناير 1975، طهران، إيران",
+      "en": "DOB: 28 Jan 1975, Tehran, Iran"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-kaalund-martin",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Martin Kaalund",
+    "nameAr": "مارتن كالوند",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "DK",
+      "flag": "🇩🇰",
+      "ar": "الدنمارك",
+      "en": "Denmark"
+    },
+    "role": {
+      "ar": "مرتبط بشركة House of Shipping Investment",
+      "en": "Linked to House of Shipping Investment FZCO"
+    },
+    "info": {
+      "ar": "م: 11 أبريل 1973، كوبنهاجن",
+      "en": "DOB: 11 Apr 1973, Copenhagen"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-ronco-alessandra",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Alessandra Ronco",
+    "nameAr": "أليساندرا رونكو",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "IT",
+      "flag": "🇮🇹",
+      "ar": "إيطاليا",
+      "en": "Italy"
+    },
+    "role": {
+      "ar": "مرتبطة بشركة Evorit Strategy Consulting",
+      "en": "Linked to Evorit Strategy Consulting LLC-FZ"
+    },
+    "info": {
+      "ar": "م: 1980-1981، إيطاليا",
+      "en": "DOB: 1980-1981, Italy"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-tsernosjov-maksim",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Maksim Tsernosjov",
+    "nameAr": "ماكسيم تسيرنوسيوف",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "GB",
+      "flag": "🇬🇧",
+      "ar": "المملكة المتحدة",
+      "en": "United Kingdom"
+    },
+    "role": {
+      "ar": "مرتبط بشبكة شمخاني",
+      "en": "Linked to Shamkhani network"
+    },
+    "info": {
+      "ar": "م: 23 أغسطس 1985، جواز بريطاني",
+      "en": "DOB: 23 Aug 1985, UK passport"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-vishavdeep-gautam",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Gautam Vishavdeep",
+    "nameAr": "غوتام فيشافديب",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "IN",
+      "flag": "🇮🇳",
+      "ar": "الهند",
+      "en": "India"
+    },
+    "role": {
+      "ar": "مرتبط بشبكة شمخاني",
+      "en": "Linked to Shamkhani network"
+    },
+    "info": {
+      "ar": "م: 27 يوليو 1967، لوديانا، الهند",
+      "en": "DOB: 27 Jul 1967, Ludhiana, India"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-dezera-shipping",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "entity",
+    "nameEn": "Dezera Shipping FZCO",
+    "nameAr": "ديزيرا شيبينج ش م ح",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "AE",
+      "flag": "🇦🇪",
+      "ar": "الإمارات العربية المتحدة",
+      "en": "United Arab Emirates"
+    },
+    "role": {
+      "ar": "شركة شحن مرتبطة بشمخاني",
+      "en": "Shipping company linked to Shamkhani"
+    },
+    "info": {
+      "ar": "تأسست: 8 يوليو 2024، دبي",
+      "en": "Established: 8 Jul 2024, Dubai"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-bsg-management",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "entity",
+    "nameEn": "BSG Management Ltd",
+    "nameAr": "بي اس جي مانجمنت ليميتد",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "AE",
+      "flag": "🇦🇪",
+      "ar": "الإمارات العربية المتحدة",
+      "en": "United Arab Emirates"
+    },
+    "role": {
+      "ar": "شركة إدارة مرتبطة بزاهد",
+      "en": "Management company linked to Zahed"
+    },
+    "info": {
+      "ar": "تأسست: 19 أغسطس 2021، دبي",
+      "en": "Established: 19 Aug 2021, Dubai"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-sai-wan-shipping",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "entity",
+    "nameEn": "Sai Wan Shipping Limited",
+    "nameAr": "ساي وان شيبينج ليميتد",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13902",
+      "en": "Iran - EO 13902"
+    },
+    "country": {
+      "code": "HK",
+      "flag": "🇭🇰",
+      "ar": "هونغ كونغ",
+      "en": "Hong Kong"
+    },
+    "role": {
+      "ar": "شركة شحن مرتبطة بشمخاني",
+      "en": "Shipping company linked to Shamkhani"
+    },
+    "info": {
+      "ar": "تأسست: 6 يوليو 2018، هونغ كونغ",
+      "en": "Established: 6 Jul 2018, Hong Kong"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ofac-rashevskyi-dmytro",
+    "date": "2026-07-16",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Dmytro Rashevskyi",
+    "nameAr": "دميترو راشيفسكي",
+    "program": {
+      "ar": "عقوبات سيبرانية",
+      "en": "Cyber Sanctions"
+    },
+    "country": {
+      "code": "UA",
+      "flag": "🇺🇦",
+      "ar": "أوكرانيا",
+      "en": "Ukraine"
+    },
+    "role": {
+      "ar": "مدير خدمة First VPN",
+      "en": "Administrator of First VPN Service"
+    },
+    "info": {
+      "ar": "مزود VPN لمجموعات الفدية",
+      "en": "VPN provider to ransomware groups"
+    },
+    "url": "https://home.treasury.gov/news/press-releases/sb0559"
+  },
+  {
+    "id": "d-ofac-silayev-yegeniy",
+    "date": "2026-07-16",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Yegeniy Vladimirovich Silayev",
+    "nameAr": "يفغيني فلاديميروفيتش سيلاييف",
+    "program": {
+      "ar": "عقوبات سيبرانية",
+      "en": "Cyber Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "بائع أدوات تشفير البرامج الضارة",
+      "en": "Seller of malware cryptors"
+    },
+    "info": {
+      "ar": "أدوات لإخفاء برامج الفدية",
+      "en": "Tools to disguise ransomware"
+    },
+    "url": "https://home.treasury.gov/news/press-releases/sb0559"
+  },
+  {
+    "id": "d-ofac-first-vpn",
+    "date": "2026-07-16",
+    "src": "OFAC",
+    "type": "entity",
+    "nameEn": "First VPN Service (1VPNS)",
+    "nameAr": "خدمة فيرست في بي إن",
+    "program": {
+      "ar": "عقوبات سيبرانية",
+      "en": "Cyber Sanctions"
+    },
+    "country": {
+      "code": "UA",
+      "flag": "🇺🇦",
+      "ar": "أوكرانيا",
+      "en": "Ukraine"
+    },
+    "role": {
+      "ar": "مزود VPN لمجموعات الفدية",
+      "en": "VPN provider to ransomware groups"
+    },
+    "info": {
+      "ar": "خدمات بنية تحتية سيبرانية",
+      "en": "Cyber infrastructure services"
+    },
+    "url": "https://home.treasury.gov/news/press-releases/sb0559"
+  },
+  {
+    "id": "d-ofac-ansari-ali",
+    "date": "2026-07-10",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Ali Ansari",
+    "nameAr": "علي أنصاري",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13876 و13902",
+      "en": "Iran - EO 13876 & 13902"
+    },
+    "country": {
+      "code": "IR",
+      "flag": "🇮🇷",
+      "ar": "إيران",
+      "en": "Iran"
+    },
+    "role": {
+      "ar": "ممول يشرف على شبكة أصول عالمية",
+      "en": "Financier overseeing global assets network"
+    },
+    "info": {
+      "ar": "يخدم مجتبى خامنئي ونخب النظام",
+      "en": "Serves Mojtaba Khamenei and regime elites"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260710"
+  },
+  {
+    "id": "d-ofac-smart-global",
+    "date": "2026-07-10",
+    "src": "OFAC",
+    "type": "entity",
+    "nameEn": "Smart Global Limited",
+    "nameAr": "سمارت غلوبال ليميتد",
+    "program": {
+      "ar": "إيران - الأمر التنفيذي 13876 و13902",
+      "en": "Iran - EO 13876 & 13902"
+    },
+    "country": {
+      "code": "KN",
+      "flag": "🇰🇳",
+      "ar": "سانت كيتس ونيفيس",
+      "en": "Saint Kitts and Nevis"
+    },
+    "role": {
+      "ar": "شركة قابضة لأنصاري",
+      "en": "Ansari's holding company"
+    },
+    "info": {
+      "ar": "استخدمت للاختلاس واستثمارات",
+      "en": "Used for embezzlement and investments"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260710"
+  },
+  {
+    "id": "d-eu-volosovik-alexander",
+    "date": "2026-07-13",
+    "src": "EU",
+    "type": "individual",
+    "nameEn": "Alexander Volosovik",
+    "nameAr": "ألكسندر فولوسوفيك",
+    "program": {
+      "ar": "عقوبات الهجمات السيبرانية",
+      "en": "Cyber-attacks Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "مالك Media Land LLC",
+      "en": "Owner of Media Land LLC"
+    },
+    "info": {
+      "ar": "مزود خدمات استضافة محمية",
+      "en": "Bullet Proof Hosting provider"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/13/russian-cyber-attacks-and-destabilising-activities-council-sanctions-nine-individuals-and-four-entities/"
+  },
+  {
+    "id": "d-eu-media-land",
+    "date": "2026-07-13",
+    "src": "EU",
+    "type": "entity",
+    "nameEn": "Media Land LLC",
+    "nameAr": "ميديا لاند ذ م م",
+    "program": {
+      "ar": "عقوبات الهجمات السيبرانية",
+      "en": "Cyber-attacks Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "مزود استضافة للبرامج الضارة",
+      "en": "Hosting provider for malware"
+    },
+    "info": {
+      "ar": "هجمات فدية وتصيد واسعة",
+      "en": "Large-scale ransomware and phishing"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/13/russian-cyber-attacks-and-destabilising-activities-council-sanctions-nine-individuals-and-four-entities/"
+  },
+  {
+    "id": "d-eu-ml-cloud",
+    "date": "2026-07-13",
+    "src": "EU",
+    "type": "entity",
+    "nameEn": "ML.Cloud",
+    "nameAr": "إم إل كلاود",
+    "program": {
+      "ar": "عقوبات الهجمات السيبرانية",
+      "en": "Cyber-attacks Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "شركة شقيقة لـ Media Land LLC",
+      "en": "Sister company of Media Land LLC"
+    },
+    "info": {
+      "ar": "خدمات بنية تحتية سيبرانية",
+      "en": "Cyber infrastructure services"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/13/russian-cyber-attacks-and-destabilising-activities-council-sanctions-nine-individuals-and-four-entities/"
+  },
+  {
+    "id": "d-eu-z-pentest",
+    "date": "2026-07-13",
+    "src": "EU",
+    "type": "entity",
+    "nameEn": "Z-Pentest",
+    "nameAr": "زد-بينتست",
+    "program": {
+      "ar": "عقوبات الهجمات السيبرانية",
+      "en": "Cyber-attacks Sanctions"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "مجموعة قرصنة موالية لروسيا",
+      "en": "Pro-Russia hacktivist group"
+    },
+    "info": {
+      "ar": "تستهدف البنى التحتية الحرجة",
+      "en": "Targets critical infrastructure"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/13/russian-cyber-attacks-and-destabilising-activities-council-sanctions-nine-individuals-and-four-entities/"
+  }
 ];
 
 // المصادر الرسمية التي تُراقب
