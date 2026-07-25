@@ -340,20 +340,49 @@ html[data-lang="ar"] .ar.block{display:block}
 //  لا تعدّل يدوياً — يُعاد توليده دورياً.
 // ============================================================
 window.SANCTIONS_META = {
-  lastUpdated: "2026-07-24T07:29:10Z",
+  lastUpdated: "2026-07-25T07:13:46Z",
   ownerEmail: "c.almutlaq@gmail.com"
 };
 
 // newToList: true  => إدراج/إضافة جديدة على قائمة (يُحتسب في ملخص المضافين الجدد)
 window.SANCTIONS_ITEMS = [
   {
+    "id": "ofac-2026-07-23-hamas",
+    "src": "OFAC",
+    "date": "2026-07-23",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات مكافحة إرهاب",
+      "en": "Counter Terrorism Sanctions"
+    },
+    "country": {
+      "code": "PS",
+      "flag": "🇵🇸",
+      "ar": "فلسطين/غزة",
+      "en": "Palestine/Gaza"
+    },
+    "title": {
+      "ar": "تفكيك شبكة تمويل حماس والإخوان المسلمين",
+      "en": "Disrupting Hamas and Muslim Brotherhood Financial Networks"
+    },
+    "body": {
+      "ar": "الخزانة الأمريكية عاقبت مسؤولاً كبيراً في الإخوان المسلمين و3 أفراد و3 كيانات قدموا دعماً مادياً لحماس عبر جمعيات خيرية وهمية.",
+      "en": "Treasury sanctioned a senior Muslim Brotherhood official, 3 individuals and 3 entities providing material support to Hamas through sham charities."
+    },
+    "target": {
+      "ar": "محمود العبياري، جمعية مداد فلسطين الخيرية، كيانات في إندونيسيا وتركيا",
+      "en": "Mahmoud al-Abyari, Madad Palestine Charitable Society, entities in Indonesia and Turkey"
+    },
+    "url": "https://home.treasury.gov/news/press-releases/sb0572"
+  },
+  {
     "id": "ofac-2026-07-23-cjng",
     "src": "OFAC",
     "date": "2026-07-23",
     "newToList": true,
     "kind": {
-      "ar": "عقوبات مكافحة المخدرات",
-      "en": "Counter-Narcotics Sanctions"
+      "ar": "عقوبات مكافحة مخدرات",
+      "en": "Counter Narcotics Sanctions"
     },
     "country": {
       "code": "MX",
@@ -362,47 +391,18 @@ window.SANCTIONS_ITEMS = [
       "en": "Mexico"
     },
     "title": {
-      "ar": "أكبر حملة عقوبات أمريكية ضد كارتل خاليسكو",
-      "en": "Largest-Ever Action Against CJNG Cartel"
+      "ar": "أكبر إجراء ضد كارتل جاليسكو الجيل الجديد",
+      "en": "Largest Action Against CJNG Cartel"
     },
     "body": {
-      "ar": "وزارة الخزانة الأمريكية فرضت عقوبات على أكثر من 50 فرداً وكياناً مرتبطين بكارتل خاليسكو للجيل الجديد CJNG.",
-      "en": "US Treasury sanctioned over 50 individuals and entities linked to CJNG cartel leadership and drug trafficking networks."
+      "ar": "عاقبت الخزانة أكثر من 50 فرداً وكياناً مرتبطين بكارتل جاليسكو، بما في ذلك قيادته الجديدة بعد مقتل زعيمه السابق.",
+      "en": "Treasury sanctioned over 50 individuals and entities linked to CJNG, including its new leadership following the death of former leader El Mencho."
     },
     "target": {
-      "ar": "كارتل خاليسكو للجيل الجديد",
-      "en": "Cartel de Jalisco Nueva Generacion"
+      "ar": "خوان كارلوس غونزاليس (الزعيم الجديد)، خلايا تهريب المخدرات، شبكات تمويل غير مشروع",
+      "en": "Juan Carlos González (new leader), drug trafficking cells, illicit finance networks"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260723"
-  },
-  {
-    "id": "ofac-2026-07-23-hamas",
-    "src": "OFAC",
-    "date": "2026-07-23",
-    "newToList": true,
-    "kind": {
-      "ar": "عقوبات مكافحة الإرهاب",
-      "en": "Counter-Terrorism Sanctions"
-    },
-    "country": {
-      "code": "GB",
-      "flag": "🇬🇧",
-      "ar": "المملكة المتحدة",
-      "en": "United Kingdom"
-    },
-    "title": {
-      "ar": "تعطيل شبكات تمويل حماس والإخوان المسلمين",
-      "en": "Disrupting Hamas and Muslim Brotherhood Finance"
-    },
-    "body": {
-      "ar": "إدراج قيادي بارز بالإخوان المسلمين المصرية في لندن و6 كيانات دعمت حماس عبر قنوات تحويل دولية.",
-      "en": "UK-based senior Muslim Brotherhood leader and six entities supporting Hamas via international fundraising networks designated."
-    },
-    "target": {
-      "ar": "محمود العبياري وشبكات دعم حماس",
-      "en": "Mahmoud al-Abyari and Hamas support networks"
-    },
-    "url": "https://home.treasury.gov/news/press-releases/sb0572"
   },
   {
     "id": "ofac-2026-07-23-cuba",
@@ -420,27 +420,27 @@ window.SANCTIONS_ITEMS = [
       "en": "Cuba"
     },
     "title": {
-      "ar": "عقوبات جديدة على النظام الكوبي الشيوعي",
-      "en": "Additional Sanctions on Cuban Regime"
+      "ar": "عقوبات إضافية ضد النظام الكوبي الشيوعي",
+      "en": "Additional Sanctions Targeting Cuban Communist Regime"
     },
     "body": {
-      "ar": "عقوبات إضافية تستهدف النظام الشيوعي الكوبي والداعمين الماليين له ضمن حملة الإدارة المستمرة.",
-      "en": "Additional designations targeting corrupt Cuban Communist regime and financial backers in ongoing pressure campaign."
+      "ar": "استهدفت عقوبات جديدة كيانات كوبية وممولين يدعمون النظام الشيوعي في إطار حملة إدارة ترامب المستمرة.",
+      "en": "New sanctions targeted Cuban entities and financial backers supporting the communist regime as part of Trump administration's ongoing campaign."
     },
     "target": {
-      "ar": "كيانات وأفراد كوبيون",
-      "en": "Cuban entities and individuals"
+      "ar": "كيانات كوبية وداعميها الماليين",
+      "en": "Cuban entities and their financial backers"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260723"
   },
   {
-    "id": "ofac-2026-07-20-russia",
-    "src": "OFAC",
-    "date": "2026-07-20",
+    "id": "eu-2026-07-23-russia21",
+    "src": "EU",
+    "date": "2026-07-23",
     "newToList": true,
     "kind": {
-      "ar": "عقوبات روسيا",
-      "en": "Russia Sanctions"
+      "ar": "حزمة عقوبات روسيا",
+      "en": "Russia Sanctions Package"
     },
     "country": {
       "code": "RU",
@@ -449,27 +449,56 @@ window.SANCTIONS_ITEMS = [
       "en": "Russia"
     },
     "title": {
-      "ar": "تحديثات قوائم العقوبات الروسية",
+      "ar": "الحزمة الحادية والعشرون من عقوبات الاتحاد الأوروبي ضد روسيا",
+      "en": "EU's 21st Sanctions Package Against Russia"
+    },
+    "body": {
+      "ar": "أكبر دفعة منذ 4 سنوات: 218 إدراجاً (48 فرداً و170 كياناً) تستهدف الطاقة والبنوك والعملات المشفرة والأسطول الظل.",
+      "en": "Largest batch in 4 years: 218 designations (48 individuals, 170 entities) targeting energy, banks, crypto, shadow fleet."
+    },
+    "target": {
+      "ar": "100+ بنك، منصات عملات مشفرة، 40+ سفينة أسطول ظل، مصافي نفط، كيانات عسكرية-صناعية",
+      "en": "100+ banks, crypto platforms, 40+ shadow fleet vessels, oil refineries, military-industrial entities"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/23/21st-package-of-sanctions-eu-hits-russian-energy-financial-services-and-crypto-hard/"
+  },
+  {
+    "id": "ofac-2026-07-20-russia",
+    "src": "OFAC",
+    "date": "2026-07-20",
+    "newToList": true,
+    "kind": {
+      "ar": "تحديثات عقوبات روسيا",
+      "en": "Russia Sanctions Updates"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "title": {
+      "ar": "تحديثات إدراجات روسيا",
       "en": "Russia-related Designations Updates"
     },
     "body": {
-      "ar": "تحديثات على قوائم المدرجين في برنامج العقوبات الروسية.",
-      "en": "Updates to Russia-related sanctions lists."
+      "ar": "تحديثات على قائمة العقوبات الأمريكية ضد كيانات وأفراد مرتبطين بروسيا.",
+      "en": "Updates to US sanctions list against Russia-related entities and individuals."
     },
     "target": {
-      "ar": "أفراد وكيانات روسية",
-      "en": "Russian individuals and entities"
+      "ar": "كيانات وأفراد مرتبطون بروسيا",
+      "en": "Russia-related entities and individuals"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260720"
   },
   {
-    "id": "ofac-2026-07-17-hongkong",
+    "id": "ofac-2026-07-17-hk",
     "src": "OFAC",
     "date": "2026-07-17",
     "newToList": false,
     "kind": {
-      "ar": "رفع عقوبات هونغ كونغ",
-      "en": "Hong Kong Sanctions Removal"
+      "ar": "تحديثات وإزالات هونغ كونغ",
+      "en": "Hong Kong Updates and Removals"
     },
     "country": {
       "code": "HK",
@@ -478,26 +507,26 @@ window.SANCTIONS_ITEMS = [
       "en": "Hong Kong"
     },
     "title": {
-      "ar": "إزالة تسعة أشخاص من قائمة عقوبات هونغ كونغ",
-      "en": "Hong Kong Sanctions Removals"
+      "ar": "إزالة 9 أشخاص من قائمة عقوبات هونغ كونغ",
+      "en": "Removal of 9 Persons from Hong Kong Sanctions"
     },
     "body": {
-      "ar": "إزالة 9 أشخاص من قائمة العقوبات بعد انتهاء حالة الطوارئ الوطنية المتعلقة بهونغ كونغ.",
-      "en": "Nine persons removed from sanctions list after Hong Kong emergency declaration expired."
+      "ar": "أزال OFAC 9 أشخاص بعد انتهاء حالة الطوارئ الوطنية المتعلقة بهونغ كونغ بموجب الأمر التنفيذي 13936.",
+      "en": "OFAC removed 9 persons after expiration of Hong Kong national emergency under Executive Order 13936."
     },
     "target": {
-      "ar": "أفراد هونغ كونغ",
-      "en": "Hong Kong individuals"
+      "ar": "9 أشخاص محددين بموجب الأمر التنفيذي 13936",
+      "en": "9 persons designated under E.O. 13936"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260717"
   },
   {
-    "id": "ofac-2026-07-15-irgc",
+    "id": "ofac-2026-07-15-iran-irgc",
     "src": "OFAC",
     "date": "2026-07-15",
     "newToList": true,
     "kind": {
-      "ar": "عقوبات انتشار أسلحة الدمار الشامل",
+      "ar": "عقوبات عدم انتشار",
       "en": "Non-Proliferation Sanctions"
     },
     "country": {
@@ -507,16 +536,16 @@ window.SANCTIONS_ITEMS = [
       "en": "Iran"
     },
     "title": {
-      "ar": "عقوبات على شبكة شراء أسلحة للحرس الثوري",
-      "en": "IRGC Weapons Procurement Network"
+      "ar": "شبكة دولية لشراء أسلحة للحرس الثوري الإيراني",
+      "en": "International Weapons Procurement Network for IRGC"
     },
     "body": {
-      "ar": "إدراج 7 أفراد وكيانات في شبكة دولية لشراء الأسلحة لصالح الحرس الثوري الإيراني.",
-      "en": "Seven individuals and entities sanctioned for supporting IRGC weapons procurement efforts internationally."
+      "ar": "عاقبت OFAC 7 أفراد وكيانات متهمين بدعم جهود شراء أسلحة للحرس الثوري الإيراني.",
+      "en": "OFAC sanctioned 7 individuals and entities allegedly supporting weapons procurement for IRGC."
     },
     "target": {
-      "ar": "شبكة دولية تدعم الحرس الثوري",
-      "en": "International network supporting IRGC"
+      "ar": "7 أفراد وكيانات في شبكة شراء أسلحة دولية",
+      "en": "7 individuals and entities in international procurement network"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260715"
   },
@@ -526,8 +555,8 @@ window.SANCTIONS_ITEMS = [
     "date": "2026-07-14",
     "newToList": true,
     "kind": {
-      "ar": "عقوبات إيران",
-      "en": "Iran Sanctions"
+      "ar": "عقوبات إيران - شبكة الشحن",
+      "en": "Iran Sanctions - Shipping Network"
     },
     "country": {
       "code": "IR",
@@ -536,56 +565,56 @@ window.SANCTIONS_ITEMS = [
       "en": "Iran"
     },
     "title": {
-      "ar": "توسيع العقوبات على شبكة شامخاني للنفط",
-      "en": "Shamkhani Oil-Shipping Network Expansion"
+      "ar": "توسيع العقوبات ضد شبكة الشحن غير المشروع لشمخاني",
+      "en": "Expanding Sanctions Against Shamkhani Illicit Shipping Network"
     },
     "body": {
-      "ar": "عقوبات على أكثر من 50 فرداً وشركة وسفينة مرتبطة بشبكة محمد حسين شامخاني لتسهيل صادرات النفط الإيرانية.",
-      "en": "Over 50 individuals, companies, and vessels linked to Shamkhani network facilitating Iran oil exports sanctioned."
+      "ar": "عاقبت OFAC أكثر من 50 فرداً وشركة وسفينة مرتبطين بشبكة شمخاني عبر الإمارات وسنغافورة وهونغ كونغ والهند.",
+      "en": "OFAC sanctioned over 50 individuals, companies and vessels linked to Shamkhani network across UAE, Singapore, Hong Kong, India."
     },
     "target": {
-      "ar": "شبكة محمد حسين شامخاني",
-      "en": "Mohammad Hossein Shamkhani network"
+      "ar": "محمد حسين شمخاني وشبكته لتصدير النفط الإيراني",
+      "en": "Mohammad Hossein Shamkhani and his network for Iranian oil exports"
     },
-    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+    "url": "https://home.treasury.gov/news/press-releases/sb0562"
   },
   {
-    "id": "ofac-2026-07-10-ansari",
-    "src": "OFAC",
-    "date": "2026-07-10",
-    "newToList": true,
-    "kind": {
-      "ar": "عقوبات إيران",
-      "en": "Iran Sanctions"
-    },
-    "country": {
-      "code": "IR",
-      "flag": "🇮🇷",
-      "ar": "إيران",
-      "en": "Iran"
-    },
-    "title": {
-      "ar": "عقوبات على شبكة علي أنصاري المالية",
-      "en": "Ali Ansari Financial Network"
-    },
-    "body": {
-      "ar": "إدراج الميسر المالي الإيراني علي أنصاري وشبكته المالية وبيوت صرافة إيرانية.",
-      "en": "Iranian financial facilitator Ali Ansari, his network, and Iranian exchange houses designated."
-    },
-    "target": {
-      "ar": "علي أنصاري وشبكته المالية",
-      "en": "Ali Ansari and financial network"
-    },
-    "url": "https://ofac.treasury.gov/recent-actions/20260710"
-  },
-  {
-    "id": "eu-2026-07-23-russia-21",
+    "id": "eu-2026-07-13-sudan",
     "src": "EU",
-    "date": "2026-07-23",
+    "date": "2026-07-13",
     "newToList": true,
     "kind": {
-      "ar": "الحزمة 21 لعقوبات روسيا",
-      "en": "21st Russia Sanctions Package"
+      "ar": "عقوبات قطاعية السودان",
+      "en": "Sudan Sectoral Sanctions"
+    },
+    "country": {
+      "code": "SD",
+      "flag": "🇸🇩",
+      "ar": "السودان",
+      "en": "Sudan"
+    },
+    "title": {
+      "ar": "تدابير جديدة تستهدف قطاع الذهب في السودان",
+      "en": "New Measures Targeting Sudan's Gold Sector"
+    },
+    "body": {
+      "ar": "فرض الاتحاد الأوروبي حظراً على استيراد الذهب السوداني وتصدير الزئبق وسيانيد الصوديوم إلى السودان اعتباراً من 15 يوليو.",
+      "en": "EU imposed ban on importing Sudanese gold and exporting mercury and sodium cyanide to Sudan starting July 15."
+    },
+    "target": {
+      "ar": "قطاع الذهب، الزئبق، سيانيد الصوديوم",
+      "en": "Gold sector, mercury, sodium cyanide"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/13/"
+  },
+  {
+    "id": "eu-2026-07-13-russia-hr",
+    "src": "EU",
+    "date": "2026-07-13",
+    "newToList": true,
+    "kind": {
+      "ar": "عقوبات حقوق الإنسان",
+      "en": "Human Rights Sanctions"
     },
     "country": {
       "code": "RU",
@@ -594,105 +623,76 @@ window.SANCTIONS_ITEMS = [
       "en": "Russia"
     },
     "title": {
-      "ar": "أكبر حزمة عقوبات أوروبية منذ 4 سنوات",
-      "en": "Largest EU Sanctions Round in 4 Years"
+      "ar": "عقوبات حقوق الإنسان ضد روسيا - تعذيب أسرى حرب",
+      "en": "Russia Human Rights Sanctions - Torture of POWs"
     },
     "body": {
-      "ar": "218 إدراجاً جديداً (48 فرداً و170 كياناً) تستهدف البنوك الروسية والعملات المشفرة وأسطول الظل النفطي.",
-      "en": "218 new designations (48 individuals, 170 entities) targeting Russian banks, crypto networks, shadow fleet, and energy sector."
+      "ar": "عاقب المجلس 15 فرداً وكياناً واحداً مسؤولين عن تعذيب أسرى الحرب الأوكرانيين والمحتجزين المدنيين.",
+      "en": "Council sanctioned 15 individuals and 1 entity responsible for torture of Ukrainian POWs and civilian detainees."
     },
     "target": {
-      "ar": "البنوك الروسية والكيانات المالية",
-      "en": "Russian banks and financial entities"
+      "ar": "مسؤولون عن التعذيب في مستعمرات عقابية روسية",
+      "en": "Officials responsible for torture in Russian penal colonies"
     },
-    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/23/"
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/13/"
   },
   {
-    "id": "eu-2026-07-13-sudan",
-    "src": "EU",
-    "date": "2026-07-13",
+    "id": "un-2026-07-22-libya",
+    "src": "UN",
+    "date": "2026-07-22",
     "newToList": true,
     "kind": {
-      "ar": "عقوبات السودان",
-      "en": "Sudan Sanctions"
+      "ar": "عقوبات ليبيا",
+      "en": "Libya Sanctions"
     },
     "country": {
-      "code": "SD",
-      "flag": "🇸🇩",
-      "ar": "السودان",
-      "en": "Sudan"
+      "code": "LY",
+      "flag": "🇱🇾",
+      "ar": "ليبيا",
+      "en": "Libya"
     },
     "title": {
-      "ar": "قيود جديدة على قطاع الذهب في السودان",
-      "en": "New Gold Sector Restrictions on Sudan"
+      "ar": "إضافة سفينة إلى قائمة عقوبات ليبيا",
+      "en": "Vessel Added to Libya Sanctions List"
     },
     "body": {
-      "ar": "حظر على استيراد الذهب السوداني وتصدير الزئبق وسيانيد الصوديوم لاستهداف اقتصاد الحرب.",
-      "en": "Ban on Sudanese gold imports and export of mercury and sodium cyanide to target war economy."
+      "ar": "أضافت لجنة ليبيا التابعة لمجلس الأمن سفينة Avax لمحاولة تصدير نفط غير قانوني من ليبيا.",
+      "en": "UN Libya Committee added vessel Avax for attempts to illicitly export petroleum from Libya."
     },
     "target": {
-      "ar": "قطاع الذهب السوداني",
-      "en": "Sudanese gold sector"
+      "ar": "السفينة Avax (علم الكاميرون)",
+      "en": "Vessel Avax (Cameroon flag)"
     },
-    "url": "https://www.consilium.europa.eu/en/"
+    "url": "https://press.un.org/en/2026/sc16421.doc.htm"
   },
   {
-    "id": "uk-2026-07-16-sudan",
-    "src": "UK",
-    "date": "2026-07-16",
-    "newToList": true,
-    "kind": {
-      "ar": "عقوبات السودان",
-      "en": "Sudan Sanctions"
-    },
-    "country": {
-      "code": "SD",
-      "flag": "🇸🇩",
-      "ar": "السودان",
-      "en": "Sudan"
-    },
-    "title": {
-      "ar": "تجميد أصول فردين و9 كيانات متعلقة بالسودان",
-      "en": "Sudan-related Asset Freezes"
-    },
-    "body": {
-      "ar": "عقوبات تجميد أصول على فردين و9 كيانات (7 في الإمارات، 1 في هونغ كونغ، 1 في السودان) لتوريد الأسلحة والذهب.",
-      "en": "Two individuals and nine entities (7 UAE-based, 1 Hong Kong, 1 Sudan) sanctioned for supplying weapons, money, and gold."
-    },
-    "target": {
-      "ar": "شبكات دعم قوات الدعم السريع والقوات المسلحة",
-      "en": "RSF and SAF support networks"
-    },
-    "url": "https://www.gov.uk/government/collections/financial-sanctions-regime-specific-consolidated-lists-and-releases"
-  },
-  {
-    "id": "uk-2026-07-14-iran-imcr",
-    "src": "UK",
+    "id": "un-2026-07-14-drc",
+    "src": "UN",
     "date": "2026-07-14",
     "newToList": true,
     "kind": {
-      "ar": "عقوبات إيران",
-      "en": "Iran Sanctions"
+      "ar": "عقوبات الكونغو الديمقراطية",
+      "en": "DRC Sanctions"
     },
     "country": {
-      "code": "IR",
-      "flag": "🇮🇷",
-      "ar": "إيران",
-      "en": "Iran"
+      "code": "CD",
+      "flag": "🇨🇩",
+      "ar": "جمهورية الكونغو الديمقراطية",
+      "en": "Democratic Republic of the Congo"
     },
     "title": {
-      "ar": "إدراج الحركة الإسلامية لرفاق اليمين",
-      "en": "Islamic Movement of Companions Designated"
+      "ar": "إضافة 6 أفراد وكيانين إلى قائمة عقوبات الكونغو",
+      "en": "6 Individuals and 2 Entities Added to DRC Sanctions"
     },
     "body": {
-      "ar": "إدراج الحركة الإسلامية لرفاق اليمين IMCR لتنفيذها أنشطة عدائية بتوجيه من إيران وهجمات ضد مواقع يهودية.",
-      "en": "IMCR designated for Iran-backed hostile activity and attacks on Jewish locations in the UK."
+      "ar": "وافقت لجنة العقوبات 1533 على إضافة 6 أفراد وكيانين بينهم قائد تحالف نهر الكونغو كورنيل نانغا.",
+      "en": "Sanctions Committee 1533 approved addition of 6 individuals and 2 entities including Alliance Fleuve Congo leader Corneille Nangaa."
     },
     "target": {
-      "ar": "الحركة الإسلامية لرفاق اليمين",
-      "en": "Islamic Movement of Companions of the Right"
+      "ar": "كورنيل نانغا يوبيلو، محمد لوميسا، كيانات مسلحة",
+      "en": "Corneille Nangaa Yobeluo, Muhammed Lumisa, armed entities"
     },
-    "url": "https://www.gov.uk/government/news/"
+    "url": "https://press.un.org/en/2026/sc16416.doc.htm"
   }
 ];
 
@@ -739,15 +739,15 @@ window.FATF_DATA = {
 // New additions to sanctions lists (individuals & entities)
 window.DESIGNATIONS = [
   {
-    "id": "d-2026-07-23-01",
+    "id": "d-abyari",
     "date": "2026-07-23",
     "src": "OFAC",
     "type": "individual",
     "nameEn": "Mahmoud al-Abyari",
     "nameAr": "محمود العبياري",
     "program": {
-      "ar": "مكافحة الإرهاب",
-      "en": "Counter-Terrorism"
+      "ar": "الإخوان المسلمين / حماس",
+      "en": "Muslim Brotherhood / Hamas"
     },
     "country": {
       "code": "GB",
@@ -756,25 +756,25 @@ window.DESIGNATIONS = [
       "en": "United Kingdom"
     },
     "role": {
-      "ar": "أمين عام الأمانة العامة للإخوان المسلمين المصرية",
-      "en": "Secretary General of Egyptian Muslim Brotherhood"
+      "ar": "قيادي كبير في الإخوان المسلمين المصرية، الأمين العام",
+      "en": "Senior Egyptian Muslim Brotherhood leader, Secretary General"
     },
     "info": {
-      "ar": "مقيم في المملكة المتحدة",
-      "en": "UK-based senior leader"
+      "ar": "مقره في المملكة المتحدة، دعم جمع التبرعات لكيانات مرتبطة بحماس",
+      "en": "UK-based, supported fundraising for Hamas-linked entities"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260723"
   },
   {
-    "id": "d-2026-07-23-02",
+    "id": "d-madad-palestine",
     "date": "2026-07-23",
     "src": "OFAC",
     "type": "entity",
-    "nameEn": "MADAD PALESTINE CHARITABLE SOCIETY",
+    "nameEn": "Madad Palestine Charitable Society",
     "nameAr": "جمعية مداد فلسطين الخيرية",
     "program": {
-      "ar": "مكافحة الإرهاب",
-      "en": "Counter-Terrorism"
+      "ar": "حماس - جمعيات خيرية وهمية",
+      "en": "Hamas - Sham Charities"
     },
     "country": {
       "code": "PS",
@@ -783,25 +783,25 @@ window.DESIGNATIONS = [
       "en": "Gaza"
     },
     "role": {
-      "ar": "جمعية خيرية مرتبطة بحماس",
-      "en": "Charity linked to Hamas"
+      "ar": "جمعية خيرية وهمية تحول أموالاً إلى الجناح العسكري لحماس",
+      "en": "Sham charity funneling funds to Hamas military wing"
     },
     "info": {
-      "ar": "تأسست 2014، سجل تجاري 8441",
-      "en": "Est. 2014, Chamber 8441"
+      "ar": "تأسست 2014، رقم غرفة التجارة 8441",
+      "en": "Established 2014, Chamber of Commerce No. 8441"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260723"
   },
   {
-    "id": "d-2026-07-23-03",
+    "id": "d-tujah-bulah",
     "date": "2026-07-23",
     "src": "OFAC",
     "type": "entity",
-    "nameEn": "TUJAH BULAH GLOBAL",
-    "nameAr": "توجاه بولاه غلوبال",
+    "nameEn": "Tujah Bulah Global",
+    "nameAr": "توجة بولة غلوبال",
     "program": {
-      "ar": "مكافحة الإرهاب",
-      "en": "Counter-Terrorism"
+      "ar": "دعم مادي لحماس",
+      "en": "Material Support to Hamas"
     },
     "country": {
       "code": "ID",
@@ -814,129 +814,48 @@ window.DESIGNATIONS = [
       "en": "Entity providing material support to Hamas"
     },
     "info": {
-      "ar": "مقره إندونيسيا",
-      "en": "Indonesia-based"
+      "ar": "مقره في إندونيسيا",
+      "en": "Based in Indonesia"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260723"
   },
   {
-    "id": "d-2026-07-23-04",
+    "id": "d-elkahira",
     "date": "2026-07-23",
     "src": "OFAC",
     "type": "entity",
-    "nameEn": "EL-KAHIRA FOR GENERAL TRADING",
+    "nameEn": "El-Kahira for General Trading",
     "nameAr": "القاهرة للتجارة العامة",
     "program": {
-      "ar": "مكافحة الإرهاب",
-      "en": "Counter-Terrorism"
+      "ar": "دعم مادي لحماس",
+      "en": "Material Support to Hamas"
     },
     "country": {
       "code": "TR",
       "flag": "🇹🇷",
       "ar": "تركيا",
-      "en": "Türkiye"
+      "en": "Turkey"
     },
     "role": {
-      "ar": "شركة تجارية تدعم حماس",
-      "en": "Trading company supporting Hamas"
+      "ar": "كيان يقدم دعماً مادياً لحماس",
+      "en": "Entity providing material support to Hamas"
     },
     "info": {
-      "ar": "مقرها تركيا",
-      "en": "Türkiye-based"
+      "ar": "مقره في تركيا",
+      "en": "Based in Turkey"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260723"
   },
   {
-    "id": "d-2026-07-23-05",
+    "id": "d-gonzalez-cjng",
     "date": "2026-07-23",
     "src": "OFAC",
     "type": "individual",
-    "nameEn": "Khuldun Khamis Zakaria Alden",
-    "nameAr": "خلدون خميس زكريا الدين",
+    "nameEn": "Juan Carlos González",
+    "nameAr": "خوان كارلوس غونزاليس",
     "program": {
-      "ar": "مكافحة الإرهاب",
-      "en": "Counter-Terrorism"
-    },
-    "country": {
-      "code": "PS",
-      "flag": "🇵🇸",
-      "ar": "فلسطين",
-      "en": "Palestine"
-    },
-    "role": {
-      "ar": "فرد يدعم حماس",
-      "en": "Individual supporting Hamas"
-    },
-    "info": {
-      "ar": "ضمن شبكة التمويل",
-      "en": "Part of finance network"
-    },
-    "url": "https://ofac.treasury.gov/recent-actions/20260723"
-  },
-  {
-    "id": "d-2026-07-23-06",
-    "date": "2026-07-23",
-    "src": "OFAC",
-    "type": "individual",
-    "nameEn": "Zaid Issam Ahmed Al-Jebouri",
-    "nameAr": "زيد عصام أحمد الجبوري",
-    "program": {
-      "ar": "مكافحة الإرهاب",
-      "en": "Counter-Terrorism"
-    },
-    "country": {
-      "code": "IQ",
-      "flag": "🇮🇶",
-      "ar": "العراق",
-      "en": "Iraq"
-    },
-    "role": {
-      "ar": "فرد يدعم حماس",
-      "en": "Individual supporting Hamas"
-    },
-    "info": {
-      "ar": "ضمن شبكة التمويل",
-      "en": "Part of finance network"
-    },
-    "url": "https://ofac.treasury.gov/recent-actions/20260723"
-  },
-  {
-    "id": "d-2026-07-23-07",
-    "date": "2026-07-23",
-    "src": "OFAC",
-    "type": "individual",
-    "nameEn": "Abdullah Issam Ahmad Al-Jebouri",
-    "nameAr": "عبد الله عصام أحمد الجبوري",
-    "program": {
-      "ar": "مكافحة الإرهاب",
-      "en": "Counter-Terrorism"
-    },
-    "country": {
-      "code": "IQ",
-      "flag": "🇮🇶",
-      "ar": "العراق",
-      "en": "Iraq"
-    },
-    "role": {
-      "ar": "فرد يدعم حماس",
-      "en": "Individual supporting Hamas"
-    },
-    "info": {
-      "ar": "ضمن شبكة التمويل",
-      "en": "Part of finance network"
-    },
-    "url": "https://ofac.treasury.gov/recent-actions/20260723"
-  },
-  {
-    "id": "d-2026-07-23-08",
-    "date": "2026-07-23",
-    "src": "OFAC",
-    "type": "entity",
-    "nameEn": "MEDIN PRODUCTS S.A.S.",
-    "nameAr": "ميدين برودكتس",
-    "program": {
-      "ar": "مكافحة المخدرات",
-      "en": "Counter-Narcotics"
+      "ar": "كارتل جاليسكو - إرهاب مخدرات",
+      "en": "CJNG Cartel - Narco-terrorism"
     },
     "country": {
       "code": "MX",
@@ -945,25 +864,160 @@ window.DESIGNATIONS = [
       "en": "Mexico"
     },
     "role": {
-      "ar": "متجر تجزئة مرتبط بكارتل CJNG",
-      "en": "Retail store linked to CJNG cartel"
+      "ar": "الزعيم الجديد لكارتل جاليسكو، لقبه 'بيلون'",
+      "en": "New leader of CJNG cartel, aka 'Pelón'"
     },
     "info": {
-      "ar": "غوادالاخارا، تأسست 2022/7/25",
-      "en": "Guadalajara, Est. Jul 2022"
+      "ar": "مزدوج الجنسية أمريكي-مكسيكي، خلف 'إل مينشو' بعد مقتله",
+      "en": "Dual US-Mexican national, succeeded 'El Mencho' after his death"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260723"
   },
   {
-    "id": "d-2026-07-14-01",
+    "id": "d-arefiev",
+    "date": "2026-07-23",
+    "src": "EU",
+    "type": "individual",
+    "nameEn": "Ruslan Georgievich Arefiev",
+    "nameAr": "روسلان جيورجيفيتش أريفييف",
+    "program": {
+      "ar": "عقوبات روسيا - الحزمة 21",
+      "en": "Russia Sanctions - Package 21"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "رئيس بنك CMR، دوره في الدمج المالي للأراضي الأوكرانية المحتلة",
+      "en": "Chairman of CMRBank, role in financial integration of occupied Ukrainian territories"
+    },
+    "info": {
+      "ar": "القطاع المصرفي والمالي",
+      "en": "Banking and financial sector"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/23/21st-package-of-sanctions-eu-hits-russian-energy-financial-services-and-crypto-hard/"
+  },
+  {
+    "id": "d-dvorkovich",
+    "date": "2026-07-23",
+    "src": "EU",
+    "type": "individual",
+    "nameEn": "Arkady Dvorkovich",
+    "nameAr": "أركادي دفوركوفيتش",
+    "program": {
+      "ar": "عقوبات روسيا - الحزمة 21",
+      "en": "Russia Sanctions - Package 21"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "رئيس الاتحاد الدولي للشطرنج (FIDE)",
+      "en": "President of FIDE (World Chess Federation)"
+    },
+    "info": {
+      "ar": "عوقب لدعم ضم القرم والمناطق الجديدة إلى روسيا",
+      "en": "Sanctioned for supporting Crimea and new regions' incorporation into Russia"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/23/21st-package-of-sanctions-eu-hits-russian-energy-financial-services-and-crypto-hard/"
+  },
+  {
+    "id": "d-tabak",
+    "date": "2026-07-23",
+    "src": "EU",
+    "type": "individual",
+    "nameEn": "Vladimir Tabak",
+    "nameAr": "فلاديمير تاباك",
+    "program": {
+      "ar": "عقوبات روسيا - دعاية",
+      "en": "Russia Sanctions - Propaganda"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "مدير عام ANO Dialog، نشر دعاية الحرب الروسية",
+      "en": "Director General of ANO Dialog, spreading Russia's war propaganda"
+    },
+    "info": {
+      "ar": "مسؤول عن منظمات موالية للكرملين ومنصة RRN",
+      "en": "Responsible for pro-Kremlin organizations and RRN platform"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/23/21st-package-of-sanctions-eu-hits-russian-energy-financial-services-and-crypto-hard/"
+  },
+  {
+    "id": "d-grigoriev",
+    "date": "2026-07-23",
+    "src": "EU",
+    "type": "individual",
+    "nameEn": "Maxim Grigoriev",
+    "nameAr": "مكسيم غريغورييف",
+    "program": {
+      "ar": "عقوبات روسيا - دعاية",
+      "en": "Russia Sanctions - Propaganda"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "عضو الغرفة العامة، يرأس محكمة وهمية ويروج روايات روسية",
+      "en": "Public Chamber member, heads fictitious tribunal and promotes Russian narratives"
+    },
+    "info": {
+      "ar": "يروج بانتظام روايات الدولة الروسية",
+      "en": "Regularly voices Russian state narratives"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/23/21st-package-of-sanctions-eu-hits-russian-energy-financial-services-and-crypto-hard/"
+  },
+  {
+    "id": "d-sistema",
+    "date": "2026-07-23",
+    "src": "EU",
+    "type": "entity",
+    "nameEn": "Sistema",
+    "nameAr": "سيستيما",
+    "program": {
+      "ar": "عقوبات روسيا - الحزمة 21",
+      "en": "Russia Sanctions - Package 21"
+    },
+    "country": {
+      "code": "RU",
+      "flag": "🇷🇺",
+      "ar": "روسيا",
+      "en": "Russia"
+    },
+    "role": {
+      "ar": "تكتل أعمال كبير يوفر دخلاً للحكومة الروسية",
+      "en": "Large business conglomerate providing significant income to Russian government"
+    },
+    "info": {
+      "ar": "شركة استثمار، كيان قانوني في صناعة تدر دخلاً للحكومة",
+      "en": "Investment corporation, entity in industry providing government revenue"
+    },
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/23/21st-package-of-sanctions-eu-hits-russian-energy-financial-services-and-crypto-hard/"
+  },
+  {
+    "id": "d-dehkordi",
     "date": "2026-07-14",
     "src": "OFAC",
     "type": "individual",
-    "nameEn": "Mohammad Hossein Shamkhani",
-    "nameAr": "محمد حسين شامخاني",
+    "nameEn": "Asghar Aghili Dehkordi",
+    "nameAr": "أصغر عقيلي دهكردي",
     "program": {
-      "ar": "إيران",
-      "en": "Iran"
+      "ar": "شبكة شمخاني - إيران",
+      "en": "Shamkhani Network - Iran"
     },
     "country": {
       "code": "IR",
@@ -972,25 +1026,133 @@ window.DESIGNATIONS = [
       "en": "Iran"
     },
     "role": {
-      "ar": "رجل أعمال إيراني يدير شبكة شحن نفط غير مشروعة",
-      "en": "Iranian businessman running illicit oil-shipping network"
+      "ar": "مدير تنفيذي في شبكة شحن شمخاني",
+      "en": "Executive in Shamkhani shipping network"
     },
     "info": {
-      "ar": "أكثر من 200 فرد وكيان مدرجين في شبكته",
-      "en": "Over 200 individuals/entities in network"
+      "ar": "مواليد شهركرد 21 فبراير 1976، مقيم في الإمارات",
+      "en": "Born Shahrekord Feb 21, 1976, residing in UAE"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260714"
   },
   {
-    "id": "d-2026-07-10-01",
+    "id": "d-george",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Jijin George",
+    "nameAr": "جيجن جورج",
+    "program": {
+      "ar": "شبكة شمخاني - إيران",
+      "en": "Shamkhani Network - Iran"
+    },
+    "country": {
+      "code": "IN",
+      "flag": "🇮🇳",
+      "ar": "الهند",
+      "en": "India"
+    },
+    "role": {
+      "ar": "مدير تنفيذي في شبكة شحن شمخاني",
+      "en": "Executive in Shamkhani shipping network"
+    },
+    "info": {
+      "ar": "مواليد تريفاندرام 16 يناير 1994، مقيم في الإمارات",
+      "en": "Born Trivandrum Jan 16, 1994, based in UAE"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-kaalund",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Martin Austin Kaalund",
+    "nameAr": "مارتن أوستن كالوند",
+    "program": {
+      "ar": "شبكة شمخاني - إيران",
+      "en": "Shamkhani Network - Iran"
+    },
+    "country": {
+      "code": "DK",
+      "flag": "🇩🇰",
+      "ar": "الدنمارك",
+      "en": "Denmark"
+    },
+    "role": {
+      "ar": "مدير تنفيذي أوروبي في شبكة شمخاني، مدير مالي عالمي",
+      "en": "European executive in Shamkhani network, global CFO"
+    },
+    "info": {
+      "ar": "مواليد كوبنهاغن 11 أبريل 1973، عناوين في سنغافورة ودبي",
+      "en": "Born Copenhagen Apr 11, 1973, addresses in Singapore and Dubai"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-sealead",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "entity",
+    "nameEn": "Sea Lead Shipping",
+    "nameAr": "سي ليد شيبينغ",
+    "program": {
+      "ar": "شبكة شمخاني - إيران",
+      "en": "Shamkhani Network - Iran"
+    },
+    "country": {
+      "code": "SG",
+      "flag": "🇸🇬",
+      "ar": "سنغافورة",
+      "en": "Singapore"
+    },
+    "role": {
+      "ar": "شركة شحن تدير أسطولاً لنقل البضائع الإيرانية",
+      "en": "Shipping company managing fleet transporting Iranian goods"
+    },
+    "info": {
+      "ar": "تدير سفن SHENTON WAY، TANJONG PAGAR 1، PAYA LEBAR",
+      "en": "Manages vessels SHENTON WAY, TANJONG PAGAR 1, PAYA LEBAR"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-wefreight",
+    "date": "2026-07-14",
+    "src": "OFAC",
+    "type": "entity",
+    "nameEn": "We Freight Shipping",
+    "nameAr": "وي فرايت شيبينغ",
+    "program": {
+      "ar": "شبكة شمخاني - إيران",
+      "en": "Shamkhani Network - Iran"
+    },
+    "country": {
+      "code": "AE",
+      "flag": "🇦🇪",
+      "ar": "الإمارات",
+      "en": "UAE"
+    },
+    "role": {
+      "ar": "شركة نقل تقدم خدمات لشبكة شمخاني",
+      "en": "Transportation company providing services to Shamkhani network"
+    },
+    "info": {
+      "ar": "مقرها دبي، مكاتب في الإمارات والهند وتايلاند",
+      "en": "Based Dubai, offices in UAE, India, Thailand"
+    },
+    "url": "https://ofac.treasury.gov/recent-actions/20260714"
+  },
+  {
+    "id": "d-ansari",
     "date": "2026-07-10",
     "src": "OFAC",
     "type": "individual",
     "nameEn": "Ali Ansari",
     "nameAr": "علي أنصاري",
     "program": {
-      "ar": "إيران",
-      "en": "Iran"
+      "ar": "ميسر مالي إيراني",
+      "en": "Iranian Financial Facilitator"
     },
     "country": {
       "code": "IR",
@@ -999,79 +1161,79 @@ window.DESIGNATIONS = [
       "en": "Iran"
     },
     "role": {
-      "ar": "ميسر مالي إيراني لنخب النظام",
-      "en": "Iranian financial facilitator for regime elites"
+      "ar": "رجل أعمال في دبي، ميسر مالي رئيسي لمجتبى خامنئي والحرس الثوري",
+      "en": "Dubai-based businessman, key financial facilitator for Mojtaba Khamenei and IRGC"
     },
     "info": {
-      "ar": "يشرف على شبكة أصول عالمية",
-      "en": "Oversees global asset network"
+      "ar": "مقيم في دبي، يدير شبكة مالية لصالح قيادات إيرانية",
+      "en": "Based in Dubai, manages financial network for Iranian regime figures"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260710"
   },
   {
-    "id": "d-2026-07-10-02",
+    "id": "d-smartglobal",
     "date": "2026-07-10",
     "src": "OFAC",
     "type": "entity",
-    "nameEn": "SMART GLOBAL LIMITED",
-    "nameAr": "سمارت غلوبال ليميتد",
+    "nameEn": "Smart Global Limited",
+    "nameAr": "سمارت غلوبال ليمتد",
     "program": {
-      "ar": "إيران",
-      "en": "Iran"
+      "ar": "شبكة أنصاري - إيران",
+      "en": "Ansari Network - Iran"
     },
     "country": {
-      "code": "IR",
-      "flag": "🇮🇷",
-      "ar": "إيران",
-      "en": "Iran"
+      "code": "AE",
+      "flag": "🇦🇪",
+      "ar": "الإمارات",
+      "en": "UAE"
     },
     "role": {
-      "ar": "شركة قابضة يسيطر عليها أنصاري",
-      "en": "Holding company controlled by Ansari"
+      "ar": "شركة قابضة يُزعم أنها تحت سيطرة علي أنصاري",
+      "en": "Holding company allegedly controlled by Ali Ansari"
     },
     "info": {
-      "ar": "صدر ترخيص عام مؤقت GL Y",
-      "en": "Temp. General License Y issued"
+      "ar": "صدرت رخصة عامة Y للتصفية المؤقتة",
+      "en": "General License Y issued for temporary wind down"
     },
     "url": "https://ofac.treasury.gov/recent-actions/20260710"
   },
   {
-    "id": "d-2026-07-14-02",
+    "id": "d-nangaa",
     "date": "2026-07-14",
     "src": "UN",
     "type": "individual",
-    "nameEn": "CORNEILLE NANGAA YOBELUO",
-    "nameAr": "كورنيل نانغا يوبلو",
+    "nameEn": "Corneille Nangaa Yobeluo",
+    "nameAr": "كورنيل نانغا يوبيلو",
     "program": {
-      "ar": "جمهورية الكونغو الديمقراطية",
-      "en": "DRC Sanctions"
+      "ar": "عقوبات الكونغو - لجنة 1533",
+      "en": "DRC Sanctions - Committee 1533"
     },
     "country": {
       "code": "CD",
       "flag": "🇨🇩",
       "ar": "جمهورية الكونغو الديمقراطية",
-      "en": "DR Congo"
+      "en": "Democratic Republic of the Congo"
     },
     "role": {
-      "ar": "زعيم تحالف فليف كونغو AFC",
-      "en": "Leader of Alliance Fleuve Congo (AFC)"
+      "ar": "زعيم تحالف نهر الكونغو (AFC)، حركة سياسية-عسكرية",
+      "en": "Leader of Alliance Fleuve Congo (AFC), politico-military movement"
     },
     "info": {
-      "ar": "مولود 1970/7/9، جواز OP1097934",
-      "en": "DOB 9 Jul 1970, Passport OP1097934"
+      "ar": "مواليد 9 يوليو 1970 في باغبويا، باسبورات متعددة",
+      "en": "Born Jul 9, 1970 in Bagboya, multiple passports"
     },
     "url": "https://press.un.org/en/2026/sc16416.doc.htm"
   },
   {
-    "id": "d-2026-07-14-03",
+    "id": "d-lumisa",
     "date": "2026-07-14",
     "src": "UN",
     "type": "individual",
-    "nameEn": "MUHAMMED LUMISA",
+    "nameEn": "Muhammed Lumisa",
     "nameAr": "محمد لوميسا",
     "program": {
-      "ar": "جمهورية الكونغو الديمقراطية",
-      "en": "DRC Sanctions"
+      "ar": "عقوبات الكونغو - لجنة 1533",
+      "en": "DRC Sanctions - Committee 1533"
     },
     "country": {
       "code": "UG",
@@ -1080,52 +1242,52 @@ window.DESIGNATIONS = [
       "en": "Uganda"
     },
     "role": {
-      "ar": "قائد في القوات الديمقراطية المتحالفة ADF",
-      "en": "Commander in Allied Democratic Forces (ADF)"
+      "ar": "أحد قادة القوات الديمقراطية المتحالفة (ADF)",
+      "en": "Commander of Allied Democratic Forces (ADF)"
     },
     "info": {
-      "ar": "جنسية أوغندية، يشرف على اللوجستيات الخارجية",
-      "en": "Ugandan, oversees external logistics"
+      "ar": "متورط في التخطيط لأنشطة ADF ويشرف على اللوجستيات الخارجية",
+      "en": "Involved in planning ADF activities and oversees external logistics"
     },
     "url": "https://press.un.org/en/2026/sc16416.doc.htm"
   },
   {
-    "id": "d-2026-07-14-04",
-    "date": "2026-07-14",
+    "id": "d-imcr-uk",
+    "date": "2026-07-15",
     "src": "UK",
     "type": "entity",
-    "nameEn": "ISLAMIC MOVEMENT OF COMPANIONS OF THE RIGHT",
-    "nameAr": "الحركة الإسلامية لرفاق اليمين",
+    "nameEn": "Islamic Movement of Companions of the Right (IMCR)",
+    "nameAr": "الحركة الإسلامية لأصحاب اليمين",
     "program": {
-      "ar": "إيران",
-      "en": "Iran"
+      "ar": "عقوبات إيران - المملكة المتحدة",
+      "en": "Iran Sanctions - UK"
     },
     "country": {
-      "code": "IR",
-      "flag": "🇮🇷",
-      "ar": "إيران",
-      "en": "Iran"
+      "code": "GB",
+      "flag": "🇬🇧",
+      "ar": "المملكة المتحدة",
+      "en": "United Kingdom"
     },
     "role": {
-      "ar": "شبكة إجرامية بدعم إيراني تنفذ أنشطة عدائية",
-      "en": "Iran-backed proxy conducting hostile activity"
+      "ar": "منظمة بديلة/إجرامية مدعومة من إيران تقوم بأنشطة معادية",
+      "en": "Iran-backed proxy/criminal network conducting hostile activity"
     },
     "info": {
-      "ar": "تنفيذ هجمات ضد مواقع يهودية",
-      "en": "Attacks on Jewish locations"
+      "ar": "متورطة في هجمات على مواقع يهودية وتخريب أصول",
+      "en": "Involved in attacks on Jewish locations and sabotage of assets"
     },
     "url": "https://www.gov.uk/government/news/"
   },
   {
-    "id": "d-2026-07-06-01",
+    "id": "d-sc-signal",
     "date": "2026-07-06",
     "src": "UK",
     "type": "entity",
-    "nameEn": "SC SIGNAL",
+    "nameEn": "SC Signal",
     "nameAr": "إس سي سيغنال",
     "program": {
-      "ar": "الأسلحة الكيميائية",
-      "en": "Chemical Weapons"
+      "ar": "الأسلحة الكيميائية - المملكة المتحدة",
+      "en": "Chemical Weapons - UK"
     },
     "country": {
       "code": "RU",
@@ -1134,25 +1296,25 @@ window.DESIGNATIONS = [
       "en": "Russia"
     },
     "role": {
-      "ar": "معهد بحثي لتطوير مواد كيميائية سامة",
-      "en": "Research institute for toxic chemicals development"
+      "ar": "معهد بحث علمي متورط في تطوير السموم نوفيتشوك وإيبيباتيدين",
+      "en": "Scientific research institute involved in developing Novichok and Epibatidine toxins"
     },
     "info": {
-      "ar": "مرتبط بتطوير نوفيتشوك",
-      "en": "Linked to Novichok development"
+      "ar": "مرتبط بوفاة أليكسي نافالني ودون ستورغيس",
+      "en": "Linked to deaths of Alexei Navalny and Dawn Sturgess"
     },
     "url": "https://www.gov.uk/government/news/"
   },
   {
-    "id": "d-2026-07-06-02",
+    "id": "d-gniii-vm",
     "date": "2026-07-06",
     "src": "UK",
     "type": "entity",
-    "nameEn": "STATE RESEARCH INSTITUTE OF MILITARY MEDICINE",
-    "nameAr": "معهد الدولة للبحوث في الطب العسكري",
+    "nameEn": "State Research Institute of Military Medicine (GNIII VM)",
+    "nameAr": "معهد البحوث الحكومي للطب العسكري",
     "program": {
-      "ar": "الأسلحة الكيميائية",
-      "en": "Chemical Weapons"
+      "ar": "الأسلحة الكيميائية - المملكة المتحدة",
+      "en": "Chemical Weapons - UK"
     },
     "country": {
       "code": "RU",
@@ -1161,176 +1323,95 @@ window.DESIGNATIONS = [
       "en": "Russia"
     },
     "role": {
-      "ar": "معهد بحثي طبي عسكري روسي",
-      "en": "Russian military medical research institute"
+      "ar": "معهد بحوث علمية قيادي متورط في تطوير أسلحة كيميائية",
+      "en": "Leading scientific research institute involved in chemical weapons development"
     },
     "info": {
-      "ar": "مرتبط بتطوير السموم القاتلة",
-      "en": "Linked to deadly toxins development"
+      "ar": "متورط في تطوير نوفيتشوك وإيبيباتيدين",
+      "en": "Involved in developing Novichok and Epibatidine"
     },
     "url": "https://www.gov.uk/government/news/"
   },
   {
-    "id": "d-2026-07-23-eu-01",
+    "id": "d-al-jebouri-z",
     "date": "2026-07-23",
-    "src": "EU",
-    "type": "entity",
-    "nameEn": "MOSCOW EXCHANGE",
-    "nameAr": "بورصة موسكو",
-    "program": {
-      "ar": "روسيا",
-      "en": "Russia"
-    },
-    "country": {
-      "code": "RU",
-      "flag": "🇷🇺",
-      "ar": "روسيا",
-      "en": "Russia"
-    },
-    "role": {
-      "ar": "بورصة الأوراق المالية الروسية",
-      "en": "Russian stock exchange"
-    },
-    "info": {
-      "ar": "ضمن الحزمة 21",
-      "en": "In 21st package"
-    },
-    "url": "https://www.consilium.europa.eu/en/"
-  },
-  {
-    "id": "d-2026-07-23-eu-02",
-    "date": "2026-07-23",
-    "src": "EU",
+    "src": "OFAC",
     "type": "individual",
-    "nameEn": "Deputy Chairman of Bank of Russia",
-    "nameAr": "نائب رئيس البنك المركزي الروسي",
+    "nameEn": "Zaid Issam Ahmed Al-Jebouri",
+    "nameAr": "زيد عصام أحمد الجبوري",
     "program": {
-      "ar": "روسيا",
-      "en": "Russia"
+      "ar": "دعم مادي لحماس",
+      "en": "Material Support to Hamas"
     },
     "country": {
-      "code": "RU",
-      "flag": "🇷🇺",
-      "ar": "روسيا",
-      "en": "Russia"
+      "code": "TR",
+      "flag": "🇹🇷",
+      "ar": "تركيا",
+      "en": "Turkey"
     },
     "role": {
-      "ar": "نائب رئيس البنك المركزي الروسي",
-      "en": "Deputy Chairman of Bank of Russia"
+      "ar": "فرد يقدم دعماً مادياً لحماس",
+      "en": "Individual providing material support to Hamas"
     },
     "info": {
-      "ar": "ضمن الحزمة 21",
-      "en": "In 21st package"
+      "ar": "مرتبط بكيانات في تركيا",
+      "en": "Linked to entities in Turkey"
     },
-    "url": "https://www.consilium.europa.eu/en/"
+    "url": "https://ofac.treasury.gov/recent-actions/20260723"
   },
   {
-    "id": "d-2026-07-20-uk-01",
-    "date": "2026-07-20",
-    "src": "UK",
-    "type": "entity",
-    "nameEn": "VK",
-    "nameAr": "في كي",
+    "id": "d-al-jebouri-a",
+    "date": "2026-07-23",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Abdullah Issam Ahmad Al-Jebouri",
+    "nameAr": "عبد الله عصام أحمد الجبوري",
     "program": {
-      "ar": "روسيا - سايبر",
-      "en": "Russia - Cyber"
+      "ar": "دعم مادي لحماس",
+      "en": "Material Support to Hamas"
     },
     "country": {
-      "code": "RU",
-      "flag": "🇷🇺",
-      "ar": "روسيا",
-      "en": "Russia"
+      "code": "TR",
+      "flag": "🇹🇷",
+      "ar": "تركيا",
+      "en": "Turkey"
     },
     "role": {
-      "ar": "شركة تكنولوجيا روسية تطور تطبيق ماكس المدعوم حكومياً",
-      "en": "Russian tech company developing state-supported Max app"
+      "ar": "فرد يقدم دعماً مادياً لحماس",
+      "en": "Individual providing material support to Hamas"
     },
     "info": {
-      "ar": "مع شركتها الفرعية",
-      "en": "With subsidiary"
+      "ar": "مرتبط بكيانات في تركيا",
+      "en": "Linked to entities in Turkey"
     },
-    "url": "https://www.gov.uk/government/collections/financial-sanctions-regime-specific-consolidated-lists-and-releases"
+    "url": "https://ofac.treasury.gov/recent-actions/20260723"
   },
   {
-    "id": "d-2026-07-20-uk-02",
-    "date": "2026-07-20",
-    "src": "UK",
-    "type": "entity",
-    "nameEn": "CITADEL",
-    "nameAr": "سيتاديل",
+    "id": "d-alden",
+    "date": "2026-07-23",
+    "src": "OFAC",
+    "type": "individual",
+    "nameEn": "Khuldun Khamis Zakaria Alden",
+    "nameAr": "خلدون خميس زكريا ألدن",
     "program": {
-      "ar": "روسيا - سايبر",
-      "en": "Russia - Cyber"
+      "ar": "دعم مادي لحماس",
+      "en": "Material Support to Hamas"
     },
     "country": {
-      "code": "RU",
-      "flag": "🇷🇺",
-      "ar": "روسيا",
-      "en": "Russia"
+      "code": "PS",
+      "flag": "🇵🇸",
+      "ar": "فلسطين",
+      "en": "Palestine"
     },
     "role": {
-      "ar": "شركة متورطة في نظام المراقبة الروسي SORM",
-      "en": "Company involved in Russia's SORM surveillance system"
+      "ar": "فرد يقدم دعماً مادياً لحماس",
+      "en": "Individual providing material support to Hamas"
     },
     "info": {
-      "ar": "تطوير وصيانة نظام المراقبة",
-      "en": "Development and maintenance"
+      "ar": "مرتبط بشبكة تمويل حماس",
+      "en": "Linked to Hamas financing network"
     },
-    "url": "https://www.gov.uk/government/collections/financial-sanctions-regime-specific-consolidated-lists-and-releases"
-  },
-  {
-    "id": "d-2026-07-20-uk-03",
-    "date": "2026-07-20",
-    "src": "UK",
-    "type": "entity",
-    "nameEn": "VAS EXPERTS",
-    "nameAr": "في أي إس إكسبرتس",
-    "program": {
-      "ar": "روسيا - سايبر",
-      "en": "Russia - Cyber"
-    },
-    "country": {
-      "code": "RU",
-      "flag": "🇷🇺",
-      "ar": "روسيا",
-      "en": "Russia"
-    },
-    "role": {
-      "ar": "شركة متورطة في نظام المراقبة SORM",
-      "en": "Company involved in SORM surveillance"
-    },
-    "info": {
-      "ar": "توريد وصيانة",
-      "en": "Supply and maintenance"
-    },
-    "url": "https://www.gov.uk/government/collections/financial-sanctions-regime-specific-consolidated-lists-and-releases"
-  },
-  {
-    "id": "d-2026-07-20-uk-04",
-    "date": "2026-07-20",
-    "src": "UK",
-    "type": "entity",
-    "nameEn": "NORSI-TRANS",
-    "nameAr": "نورسي ترانس",
-    "program": {
-      "ar": "روسيا - سايبر",
-      "en": "Russia - Cyber"
-    },
-    "country": {
-      "code": "RU",
-      "flag": "🇷🇺",
-      "ar": "روسيا",
-      "en": "Russia"
-    },
-    "role": {
-      "ar": "شركة متورطة في نظام المراقبة SORM",
-      "en": "Company involved in SORM surveillance"
-    },
-    "info": {
-      "ar": "صيانة النظام",
-      "en": "System maintenance"
-    },
-    "url": "https://www.gov.uk/government/collections/financial-sanctions-regime-specific-consolidated-lists-and-releases"
+    "url": "https://ofac.treasury.gov/recent-actions/20260723"
   }
 ];
 
